@@ -8,7 +8,7 @@
 const CACHE_NAME = 'faadhil-digital-v1';
 const ASSETS_TO_CACHE = [
   '/',
-  '/home.html',
+  '/index.html',
   '/css/style.css',
   '/js/script.js',
   '/manifest.json',
