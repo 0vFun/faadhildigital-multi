@@ -1,0 +1,24 @@
+{
+  "short_name": "FaadhilDigital",
+  "name": "Faadhil Digital Website Agency",
+  "description": "Jasa Pembuatan Website Profesional Premium & Terpercaya.",
+  "icons": [
+    {
+      "src": "assets/LOGO4721.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/LOGO4721.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#030305",
+  "theme-color": "#030305",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}

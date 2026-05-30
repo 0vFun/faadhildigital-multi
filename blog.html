@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <title>Blog — Faadhil Digital | Tips & Insight Dunia Website</title>
+  <meta name="description" content="Baca artikel terbaru dari Faadhil Digital — tips membangun website, strategi branding digital, insight UMKM, dan panduan teknologi web modern."/>
+  <meta name="keywords" content="blog website, tips branding digital, UMKM online, landing page, jasa website, Faadhil Digital"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Faadhil Digital"/>
+  <link rel="canonical" href="https://faadhildigital.com/blog.html"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="blog"/>
+  <meta property="og:title" content="Blog — Faadhil Digital | Tips & Insight Dunia Website"/>
+  <meta property="og:description" content="Tips membangun website, strategi branding digital, dan insight UMKM dari Faadhil Digital."/>
+  <meta property="og:url" content="https://faadhildigital.com/blog.html"/>
+  <meta property="og:site_name" content="Faadhil Digital"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Blog — Faadhil Digital"/>
+  <meta name="twitter:description" content="Tips & insight dunia website dari Faadhil Digital."/>
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#030305"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/png" href="assets/LOGO4721.png"/>
+  <link rel="apple-touch-icon" href="assets/LOGO4721.png"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── BLOG-SPECIFIC STYLES ── */
+    :root {
+      --bg-main: #030305;
+      --bg-surface: #0a0a0f;
+      --bg-surface-elevated: #12121a;
+      --brand-primary: #ff7a00;
+      --brand-primary-rgb: 255, 122, 0;
+      --brand-secondary: #ff9533;
+      --text-main: #ffffff;
+      --text-muted: #8e8e93;
+      --text-dim: #515154;
+      --border-light: rgba(255,255,255,.06);
+      --border-medium: rgba(255,255,255,.12);
+      --glass-bg: rgba(10,10,15,.7);
+      --glass-blur: 20px;
+      --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --transition-smooth: cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* BLOG HERO */
+    .blog-hero {
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,122,0,.08) 0%, transparent 70%),
+        linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+      background-size: 100% 100%, 60px 60px, 60px 60px;
+      pointer-events: none;
+    }
+    .blog-hero .con { position: relative; z-index: 1; }
+    .blog-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      background: rgba(255,122,0,.06);
+      border: 1px solid rgba(255,122,0,.2);
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.08;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+    .blog-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* BLOG CONTROLS */
+    .blog-section {
+      padding: 0 0 100px;
+      background: var(--bg-main);
+    }
+    .blog-controls-bar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .blog-search-box {
+      position: relative;
+      flex: 1;
+      max-width: 340px;
+    }
+    .blog-search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
+    }
+    .blog-search-box input {
+      width: 100%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      font-family: var(--font-inter);
+      font-size: .88rem;
+      padding: 11px 16px 11px 42px;
+      outline: none;
+      transition: border-color .25s;
+    }
+    .blog-search-box input:focus { border-color: var(--brand-primary); }
+    .blog-search-box input::placeholder { color: var(--text-dim); }
+    .cat-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .cat-pill {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border-light);
+      padding: 7px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .22s;
+      font-family: var(--font-inter);
+    }
+    .cat-pill:hover {
+      color: var(--text-main);
+      border-color: var(--border-medium);
+      background: rgba(255,255,255,.06);
+    }
+    .cat-pill.active {
+      color: var(--brand-primary);
+      background: rgba(255,122,0,.08);
+      border-color: rgba(255,122,0,.25);
+    }
+
+    /* FEATURED ARTICLE */
+    .featured-article {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      margin-bottom: 32px;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+    .featured-article:hover {
+      border-color: rgba(255,122,0,.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .fa-thumb {
+      position: relative;
+      min-height: 340px;
+      background: var(--bg-surface);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fa-thumb-art {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .fa-thumb-icon {
+      font-size: 3.5rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 40px rgba(255,122,0,.3));
+    }
+    .fa-thumb-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .fa-featured-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .fa-body {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+    .fa-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fa-cat {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      background: rgba(255,122,0,.08);
+      border: 1px solid rgba(255,122,0,.2);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .fa-date {
+      font-size: .78rem;
+      color: var(--text-dim);
+    }
+    .fa-body h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+    .fa-body p {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .fa-stats {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .fa-stat {
+      font-size: .76rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .fa-read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-primary);
+      color: #fff;
+      font-size: .84rem;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: var(--radius-md);
+      align-self: flex-start;
+      transition: background .25s, transform .2s, box-shadow .25s;
+    }
+    .fa-read-btn:hover {
+      background: var(--brand-secondary);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255,122,0,.3);
+    }
+
+    /* BLOG GRID */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 52px;
+    }
+    .blog-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+    .blog-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.3);
+    }
+    .bc-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .bc-thumb-icon { font-size: 2.4rem; line-height: 1; }
+    .bc-thumb-label {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .bc-cat-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .bc-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bc-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bc-date { font-size: .74rem; color: var(--text-dim); }
+    .bc-read-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .74rem;
+      color: var(--text-dim);
+    }
+    .bc-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.4;
+      color: var(--text-main);
+    }
+    .bc-body p {
+      font-size: .84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .bc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+    .bc-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bc-author-av {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .bc-author-name { font-size: .76rem; font-weight: 500; color: var(--text-muted); }
+    .bc-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+      transition: gap .2s;
+    }
+    .bc-link:hover { gap: 8px; }
+
+    /* BLOG SIDEBAR / NEWSLETTER */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      align-items: start;
+    }
+    .blog-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 100px;
+    }
+    .sidebar-widget {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .sw-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      margin-bottom: 18px;
+    }
+    .newsletter-form { display: flex; flex-direction: column; gap: 10px; }
+    .newsletter-form p { font-size: .84rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 4px; }
+    .newsletter-input {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-family: var(--font-inter);
+      font-size: .86rem;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color .25s;
+    }
+    .newsletter-input:focus { border-color: var(--brand-primary); }
+    .newsletter-input::placeholder { color: var(--text-dim); }
+    .newsletter-btn {
+      background: var(--brand-primary);
+      color: #fff;
+      font-family: var(--font-inter);
+      font-size: .84rem;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background .25s;
+    }
+    .newsletter-btn:hover { background: var(--brand-secondary); }
+
+    .topic-list { display: flex; flex-direction: column; gap: 8px; }
+    .topic-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 13px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all .2s;
+      font-size: .84rem;
+      color: var(--text-muted);
+    }
+    .topic-item:hover {
+      border-color: var(--border-medium);
+      color: var(--text-main);
+      background: rgba(255,255,255,.04);
+    }
+    .topic-count {
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      background: rgba(255,255,255,.05);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .popular-list { display: flex; flex-direction: column; gap: 14px; }
+    .popular-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .popular-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .popular-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: rgba(255,122,0,.25);
+      flex-shrink: 0;
+      width: 24px;
+      line-height: 1.3;
+    }
+    .popular-title {
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      line-height: 1.45;
+      transition: color .2s;
+      cursor: pointer;
+    }
+    .popular-title:hover { color: var(--text-main); }
+    .popular-meta { font-size: .72rem; color: var(--text-dim); margin-top: 3px; }
+
+    /* NO RESULTS */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+      grid-column: 1 / -1;
+    }
+    .no-results-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .no-results p { font-size: .9rem; }
+
+    /* LOAD MORE */
+    .load-more-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .load-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: transparent;
+      border: 1px solid var(--border-medium);
+      color: var(--text-main);
+      font-family: var(--font-inter);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: 13px 30px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .load-more-btn:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: rgba(255,122,0,.06);
+    }
+
+    /* BLOG CTA */
+    .blog-cta {
+      margin-top: 80px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,122,0,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-cta-inner { position: relative; z-index: 1; }
+    .blog-cta h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+    .blog-cta h2 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .blog-cta p {
+      font-size: .95rem;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+    .blog-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #25d366;
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: var(--radius-md);
+      transition: background .25s, transform .2s, box-shadow .25s;
+    }
+    .cta-btn-wa:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(37,211,102,.25);
+    }
+    .cta-btn-pricing {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--border-medium);
+      color: var(--text-main);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: var(--radius-md);
+      transition: all .25s;
+    }
+    .cta-btn-pricing:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: rgba(255,122,0,.06);
+    }
+
+    /* ANIMATION / SCROLL REVEAL FIX */
+    .sr {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity .7s var(--transition-smooth) var(--delay, 0s),
+        transform .7s var(--transition-smooth) var(--delay, 0s);
+    }
+    .sr.visible, .sr.active { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .blog-layout { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+    }
+    @media (max-width: 900px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .fa-thumb { min-height: 220px; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .blog-hero { padding: 110px 0 60px; }
+      .blog-controls-bar { flex-direction: column; align-items: stretch; }
+      .blog-search-box { max-width: 100%; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .fa-body { padding: 28px 24px; }
+      .blog-cta { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader" role="status" aria-label="Loading">
+    <div class="loader-logo">
+      <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="48" height="48"/>
+      <span>Faadhil<strong>Digital</strong></span>
+    </div>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Kembali ke atas">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-container">
+      <a href="home.html" class="nav-logo" aria-label="Faadhil Digital - Beranda">
+        <img src="assets/LOGO4721.png" alt="Logo Faadhil Digital" width="32" height="32" loading="eager"/>
+        <span>Faadhil<strong>Digital</strong></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu utama">
+        <a href="home.html" class="nav-a">Home</a>
+        <a href="pricing.html" class="nav-a">Pricing</a>
+        <a href="portfolio.html" class="nav-a">Portfolio</a>
+        <a href="blog.html" class="nav-a active">Blog</a>
+        <a href="faq.html" class="nav-a">FAQ</a>
+        <a href="contact.html" class="nav-a">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+
+        <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          <span>Konsultasi Gratis</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu navigasi" hidden>
+    <nav aria-label="Menu mobile">
+      <a href="home.html" class="mob-a">Home</a>
+      <a href="pricing.html" class="mob-a">Pricing</a>
+      <a href="portfolio.html" class="mob-a">Portfolio</a>
+      <a href="blog.html" class="mob-a active">Blog</a>
+      <a href="faq.html" class="mob-a">FAQ</a>
+      <a href="contact.html" class="mob-a">Contact</a>
+    </nav>
+    <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer" class="mob-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.303A9.952 9.952 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Konsultasi Gratis
+    </a>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════ BLOG HERO ═══════════ -->
+    <section class="blog-hero" aria-labelledby="blog-hero-title">
+      <div class="con">
+        <div class="blog-hero-tag sr" data-sr="up">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8.5 6.5 9.5 10 6 8l-3.5 2 1-3.5L1 4.5h3.5L6 1z" fill="currentColor"/></svg>
+          Blog & Insight
+        </div>
+        <h1 class="sr" data-sr="up" style="--delay:.08s" id="blog-hero-title">
+          Tips & Insight<br/>Dunia <em>Website</em>
+        </h1>
+        <p class="sr" data-sr="up" style="--delay:.16s">
+          Artikel terpilih seputar strategi digital, branding online, dan panduan membangun website yang menghasilkan.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════ BLOG CONTENT ═══════════ -->
+    <section class="blog-section" aria-label="Daftar artikel">
+      <div class="con">
+
+        <!-- CONTROLS -->
+        <div class="blog-controls-bar sr" data-sr="up" style="--delay:.04s">
+          <div class="blog-search-box">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input
+              type="search"
+              id="blogSearch"
+              placeholder="Cari artikel..."
+              autocomplete="off"
+              aria-label="Cari artikel blog"
+            />
+          </div>
+          <div class="cat-pills" id="catPills" role="group" aria-label="Filter kategori">
+            <button class="cat-pill active" data-cat="all">Semua</button>
+            <button class="cat-pill" data-cat="branding">Branding Digital</button>
+            <button class="cat-pill" data-cat="website">Tips Website</button>
+            <button class="cat-pill" data-cat="umkm">UMKM</button>
+            <button class="cat-pill" data-cat="seo">SEO</button>
+          </div>
+        </div>
+
+        <!-- LAYOUT: MAIN + SIDEBAR -->
+        <div class="blog-layout">
+
+          <!-- MAIN CONTENT -->
+          <div>
+
+            <!-- FEATURED ARTICLE -->
+            <article class="featured-article sr" data-sr="up" data-cat="website" data-title="Kenapa Bisnis Anda Butuh Website di 2026" id="featured-post">
+              <div class="fa-thumb" aria-hidden="true">
+                <div class="fa-thumb-art">
+                  <div class="fa-thumb-icon">🌐</div>
+                  <span class="fa-thumb-label">Featured Article</span>
+                </div>
+                <span class="fa-featured-badge" aria-label="Artikel unggulan">⭐ Featured</span>
+              </div>
+              <div class="fa-body">
+                <div class="fa-meta">
+                  <span class="fa-cat">Tips Website</span>
+                  <span class="fa-date">12 Juni 2026</span>
+                </div>
+                <h2>Kenapa Bisnis Anda <em>Butuh Website</em> di 2026</h2>
+                <p>Di era digital ini, tidak punya website sama seperti tidak punya toko fisik. Pelajari mengapa kehadiran online bukan lagi pilihan, melainkan keharusan — dan bagaimana website yang tepat bisa melipatgandakan omzet bisnis Anda.</p>
+                <div class="fa-stats">
+                  <span class="fa-stat">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 4v2.5l1.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                    6 menit baca
+                  </span>
+                  <span class="fa-stat">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M1 6.5C1 6.5 3 2 6.5 2S12 6.5 12 6.5 10 11 6.5 11 1 6.5 1 6.5z" stroke="currentColor" stroke-width="1.3"/><circle cx="6.5" cy="6.5" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg>
+                    2.4k views
+                  </span>
+                </div>
+                <a href="#" class="fa-read-btn" aria-label="Baca artikel: Kenapa Bisnis Anda Butuh Website di 2026">
+                  Baca Selengkapnya
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTICLE GRID -->
+            <div class="blog-grid" id="blogGrid" role="list">
+
+              <!-- ARTICLE 1 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:0s" data-cat="branding" data-title="Landing Page vs Marketplace: Mana yang Lebih Menguntungkan?" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #0f0a1a, #1a0f2e);" aria-hidden="true">
+                  <div class="bc-thumb-icon">⚡</div>
+                  <span class="bc-thumb-label">Branding Digital</span>
+                  <span class="bc-cat-badge" style="background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.25);">Branding Digital</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">8 Juni 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      5 menit
+                    </span>
+                  </div>
+                  <h3>Landing Page vs Marketplace: Mana yang Lebih Menguntungkan?</h3>
+                  <p>Banyak pemilik bisnis bingung memilih — jualan di marketplace atau punya landing page sendiri? Kami bedah keduanya secara objektif.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: Landing Page vs Marketplace">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 2 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:.08s" data-cat="umkm" data-title="Cara UMKM Tampil Profesional Tanpa Budget Besar" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #0a1a0f, #0f2e1a);" aria-hidden="true">
+                  <div class="bc-thumb-icon">🏪</div>
+                  <span class="bc-thumb-label">UMKM</span>
+                  <span class="bc-cat-badge" style="background:rgba(16,185,129,.1);color:#10b981;border:1px solid rgba(16,185,129,.22);">UMKM</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">3 Juni 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      7 menit
+                    </span>
+                  </div>
+                  <h3>Cara UMKM Tampil Profesional Tanpa Budget Besar</h3>
+                  <p>Tidak perlu anggaran ratusan juta untuk tampil profesional di dunia digital. Panduan praktis untuk UMKM Indonesia yang baru mulai.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: Cara UMKM Tampil Profesional">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 3 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:.16s" data-cat="branding" data-title="Tips Branding Digital untuk Bisnis Kecil" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #1a0f0a, #2e180f);" aria-hidden="true">
+                  <div class="bc-thumb-icon">🎨</div>
+                  <span class="bc-thumb-label">Branding Digital</span>
+                  <span class="bc-cat-badge" style="background:rgba(255,122,0,.1);color:#ff9533;border:1px solid rgba(255,122,0,.22);">Branding Digital</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">28 Mei 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      4 menit
+                    </span>
+                  </div>
+                  <h3>Tips Branding Digital untuk Bisnis Kecil yang Ingin Terlihat Besar</h3>
+                  <p>Rahasia brand-brand besar dalam membangun identitas visual yang kuat — dan bagaimana Anda bisa menerapkannya meski bisnis baru mulai.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: Tips Branding Digital">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 4 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:.0s" data-cat="seo" data-title="SEO Dasar yang Harus Dipahami Sebelum Buat Website" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #0a0f1a, #0f1a2e);" aria-hidden="true">
+                  <div class="bc-thumb-icon">🔍</div>
+                  <span class="bc-thumb-label">SEO</span>
+                  <span class="bc-cat-badge" style="background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.22);">SEO</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">22 Mei 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      8 menit
+                    </span>
+                  </div>
+                  <h3>SEO Dasar yang Harus Dipahami Sebelum Buat Website</h3>
+                  <p>Sebelum website Anda dibuat, pastikan Anda mengerti fondasi SEO ini. Investasi waktu 8 menit yang bisa menghemat jutaan rupiah di iklan.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: SEO Dasar">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 5 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:.08s" data-cat="website" data-title="5 Kesalahan Fatal Website yang Bikin Pengunjung Kabur" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #1a0a0a, #2e0f0f);" aria-hidden="true">
+                  <div class="bc-thumb-icon">🚫</div>
+                  <span class="bc-thumb-label">Tips Website</span>
+                  <span class="bc-cat-badge" style="background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.22);">Tips Website</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">15 Mei 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      5 menit
+                    </span>
+                  </div>
+                  <h3>5 Kesalahan Fatal Website yang Bikin Pengunjung Kabur</h3>
+                  <p>Apakah website Anda melakukan salah satu dari 5 kesalahan ini? Pelajari bagaimana memperbaikinya sebelum kehilangan lebih banyak calon pelanggan.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: 5 Kesalahan Fatal Website">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ARTICLE 6 -->
+              <article class="blog-card sr" data-sr="up" style="--delay:.16s" data-cat="umkm" data-title="WhatsApp Business vs Website: Pilih Mana untuk UMKM?" role="listitem">
+                <div class="bc-thumb" style="background: linear-gradient(135deg, #091a12, #0f2a1c);" aria-hidden="true">
+                  <div class="bc-thumb-icon">💬</div>
+                  <span class="bc-thumb-label">UMKM</span>
+                  <span class="bc-cat-badge" style="background:rgba(16,185,129,.1);color:#10b981;border:1px solid rgba(16,185,129,.22);">UMKM</span>
+                </div>
+                <div class="bc-body">
+                  <div class="bc-meta">
+                    <span class="bc-date">8 Mei 2026</span>
+                    <span class="bc-read-time">
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 3.5v2l1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      6 menit
+                    </span>
+                  </div>
+                  <h3>WhatsApp Business vs Website: Pilih Mana untuk UMKM?</h3>
+                  <p>Banyak UMKM bergantung 100% di WhatsApp Business. Ini bukan salah — tapi ada batasan yang perlu Anda tahu. Simak perbandingan lengkapnya.</p>
+                  <div class="bc-footer">
+                    <div class="bc-author">
+                      <div class="bc-author-av" aria-hidden="true">F</div>
+                      <span class="bc-author-name">Faadhil</span>
+                    </div>
+                    <a href="#" class="bc-link" aria-label="Baca: WhatsApp Business vs Website">
+                      Baca
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- NO RESULTS -->
+              <div class="no-results" id="noResults" role="status" aria-live="polite">
+                <div class="no-results-icon" aria-hidden="true">🔍</div>
+                <p>Artikel tidak ditemukan. Coba kata kunci lain.</p>
+              </div>
+
+            </div><!-- end blog-grid -->
+
+            <!-- LOAD MORE -->
+            <div class="load-more-wrap sr" data-sr="up" style="--delay:.1s">
+              <button class="load-more-btn" id="loadMoreBtn" aria-label="Muat lebih banyak artikel">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Muat Lebih Banyak
+              </button>
+            </div>
+
+          </div><!-- end main content -->
+
+          <!-- SIDEBAR -->
+          <aside class="blog-sidebar sr" data-sr="up" style="--delay:.2s" aria-label="Sidebar blog">
+
+            <!-- NEWSLETTER -->
+            <div class="sidebar-widget">
+              <div class="sw-title">Newsletter</div>
+              <div class="newsletter-form">
+                <p>Dapatkan tips website & branding digital terbaru langsung di inbox kamu.</p>
+                <input
+                  type="email"
+                  class="newsletter-input"
+                  id="newsletterEmail"
+                  placeholder="emailkamu@gmail.com"
+                  aria-label="Email untuk newsletter"
+                />
+                <button class="newsletter-btn" id="newsletterBtn" type="button">
+                  Subscribe Gratis →
+                </button>
+              </div>
+            </div>
+
+            <!-- TOPICS -->
+            <div class="sidebar-widget">
+              <div class="sw-title">Topik</div>
+              <div class="topic-list" role="list">
+                <div class="topic-item" data-filter-cat="all" role="listitem" tabindex="0">
+                  <span>Semua Artikel</span>
+                  <span class="topic-count">7</span>
+                </div>
+                <div class="topic-item" data-filter-cat="branding" role="listitem" tabindex="0">
+                  <span>Branding Digital</span>
+                  <span class="topic-count">2</span>
+                </div>
+                <div class="topic-item" data-filter-cat="website" role="listitem" tabindex="0">
+                  <span>Tips Website</span>
+                  <span class="topic-count">3</span>
+                </div>
+                <div class="topic-item" data-filter-cat="umkm" role="listitem" tabindex="0">
+                  <span>UMKM</span>
+                  <span class="topic-count">2</span>
+                </div>
+                <div class="topic-item" data-filter-cat="seo" role="listitem" tabindex="0">
+                  <span>SEO</span>
+                  <span class="topic-count">1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- POPULAR -->
+            <div class="sidebar-widget">
+              <div class="sw-title">Paling Banyak Dibaca</div>
+              <div class="popular-list" role="list">
+                <div class="popular-item" role="listitem">
+                  <div class="popular-num">1</div>
+                  <div>
+                    <div class="popular-title" tabindex="0">Kenapa Bisnis Anda Butuh Website di 2026</div>
+                    <div class="popular-meta">2.4k views · 6 menit</div>
+                  </div>
+                </div>
+                <div class="popular-item" role="listitem">
+                  <div class="popular-num">2</div>
+                  <div>
+                    <div class="popular-title" tabindex="0">SEO Dasar yang Harus Dipahami Sebelum Buat Website</div>
+                    <div class="popular-meta">1.8k views · 8 menit</div>
+                  </div>
+                </div>
+                <div class="popular-item" role="listitem">
+                  <div class="popular-num">3</div>
+                  <div>
+                    <div class="popular-title" tabindex="0">Tips Branding Digital untuk Bisnis Kecil</div>
+                    <div class="popular-meta">1.2k views · 4 menit</div>
+                  </div>
+                </div>
+                <div class="popular-item" role="listitem">
+                  <div class="popular-num">4</div>
+                  <div>
+                    <div class="popular-title" tabindex="0">5 Kesalahan Fatal Website yang Bikin Pengunjung Kabur</div>
+                    <div class="popular-meta">980 views · 5 menit</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MINI CTA -->
+            <div class="sidebar-widget" style="background:linear-gradient(135deg,rgba(255,122,0,.08),rgba(255,122,0,.04));border-color:rgba(255,122,0,.2);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:10px;" aria-hidden="true">🚀</div>
+              <div class="sw-title" style="justify-content:center;display:flex;">Siap Buat Website?</div>
+              <p style="font-size:.84rem;color:var(--text-muted);margin-bottom:16px;line-height:1.65;">
+                Dari Rp 200.000 sudah bisa punya website profesional.
+              </p>
+              <a href="pricing.html" style="display:block;background:var(--brand-primary);color:#fff;font-size:.84rem;font-weight:600;padding:11px;border-radius:var(--radius-sm);text-align:center;transition:background .25s;" onmouseover="this.style.background='#ff9533'" onmouseout="this.style.background='#ff7a00'">
+                Lihat Paket Harga →
+              </a>
+            </div>
+
+          </aside>
+        </div><!-- end blog-layout -->
+
+        <!-- BLOG CTA BOTTOM -->
+        <div class="blog-cta sr" data-sr="up" style="--delay:.1s">
+          <div class="blog-cta-inner">
+            <div class="blog-hero-tag" style="display:inline-flex;margin-bottom:14px;">💡 Sudah Siap?</div>
+            <h2>Punya Pertanyaan tentang<br/><em>Website Bisnis Anda?</em></h2>
+            <p>Konsultasi gratis langsung via WhatsApp. Kami bantu analisa kebutuhan website yang paling tepat untuk bisnis Anda — tanpa biaya apapun.</p>
+            <div class="blog-cta-btns">
+              <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital%2C%20saya%20baca%20blog%20dan%20ingin%20konsultasi%20website" target="_blank" rel="noopener noreferrer" class="cta-btn-wa" aria-label="Konsultasi via WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.303A9.952 9.952 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="1.5"/></svg>
+                Konsultasi via WhatsApp
+              </a>
+              <a href="pricing.html" class="cta-btn-pricing" aria-label="Lihat harga paket website">
+                Lihat Paket Harga
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end con -->
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="con">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="36" height="36" loading="lazy"/>
+          <div>
+            <div class="fb-name">Faadhil<strong>Digital</strong></div>
+            <div class="fb-tag">Build Your Digital Presence</div>
+          </div>
+        </div>
+        <div class="footer-nav-wrap">
+          <div class="footer-col">
+            <h4>Halaman</h4>
+            <a href="home.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Kontak</h4>
+            <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:ahmadfaadhil854@gmail.com">Email</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm">
+        <p>© 2026 Faadhil Digital. Since 2026. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
