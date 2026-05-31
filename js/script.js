@@ -192,20 +192,22 @@ function initBackToTop() {
 
 /* ─── MOBILE MENU TOGGLE ─── */
 function initMobileMenu() {
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle = document.getElementById("menuToggle"); // -> Sekarang aman, COCOK dengan id="menuToggle" di HTML baru!
+  const mobileMenu = document.getElementById("mobileMenu"); // -> COCOK dengan id="mobileMenu" di HTML
 
   if (!menuToggle || !mobileMenu) return;
 
+  // Handler 1: Buka/Tutup Menu saat tombol Hamburger diklik
   menuToggle.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", !isExpanded);
     mobileMenu.setAttribute("aria-hidden", isExpanded);
     
-    menuToggle.classList.toggle("active");
-    mobileMenu.classList.toggle("open");
+    menuToggle.classList.toggle("active"); // -> Memicu animasi CSS Hamburger jadi (X)
+    mobileMenu.classList.toggle("open");   // -> Memicu animasi CSS Menu bergeser turun
   });
 
+  // Handler 2: Tutup menu otomatis jika salah satu link di dalam menu mobile diklik
   const links = mobileMenu.querySelectorAll("a");
   links.forEach(l => {
     l.addEventListener("click", () => {
