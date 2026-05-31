@@ -391,52 +391,75 @@ a {
   transition: all 0.3s var(--transition-smooth);
 }
 
-/* ─── MOBILE MENU ─── */
-.mobile-menu {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: var(--bg-main);
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  padding: 120px 40px 40px;
-  gap: 40px;
-  transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* ==========================================================================
+   PERBAIKAN MOBILE MENU & ANIMASI HAMBURGER (ISOLATED FIX)
+   ========================================================================== */
 
-.mobile-menu:not([hidden]) {
-  transform: translateY(0);
-}
+@media (max-width: 768px) {
+  /* 1. Kontainer Utama Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-main);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 40px 40px;
+    gap: 40px;
+    
+    /* Efek transisi Apple-Style (Mulus lewat slide down) */
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s;
+    
+    /* Keamanan: Mencegah elemen tidak sengaja terklik saat menu tertutup */
+    pointer-events: none;
+  }
 
-.mobile-menu nav {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+  /* PERBAIKAN UTAMA: Mengembalikan interaksi klik & memunculkan menu */
+  .mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* WAJIB ADA agar link di dalam menu bisa diklik di HP */
+  }
 
-.mob-a {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: var(--text-muted);
-}
+  /* 2. Animasi Tombol Hamburger Menjadi Silang (X) */
+  .nav-ham {
+    cursor: pointer;
+    position: relative;
+    z-index: 1000; /* Berada di atas kontainer menu */
+    transition: transform 0.3s ease;
+  }
 
-.mob-a.active, .mob-a:hover {
-  color: var(--text-main);
-}
+  .nav-ham span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-main);
+    margin: 5px 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  }
 
-.mob-cta {
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-medium);
-  padding: 16px;
-  border-radius: var(--radius-md);
-  text-align: center;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
+  /* Garis atas berputar 45 derajat */
+  .nav-ham.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  /* Garis tengah menghilang */
+  .nav-ham.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  /* Garis bawah berputar -45 derajat */
+  .nav-ham.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
 /* ─── PREMIUM HERO SECTION ─── */
@@ -1379,6 +1402,71 @@ a {
   .footer-top { flex-direction: column; gap: 40px; }
   .footer-nav-wrap { flex-wrap: wrap; gap: 32px; justify-content: space-between; }
   .footer-btm { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ==========================================================================
+   FIXED MOBILE MENU & HAMBURGER (ISOLATED PATCH)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-main);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 40px 40px;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Mengubah translasi menjadi -100% agar efek slide-down dari atas layar terasa premium */
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s;
+    
+    /* Proteksi: Mengunci klik tembus pandang saat menu tertutup */
+    pointer-events: none; 
+  }
+
+  /* PERBAIKAN UTAMA: Mengembalikan kemampuan interaksi klik di layar HP */
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto; /* <--- BARIS INI WAJIB ADA AGAR BISA DI-KLIK */
+  }
+
+  /* ─── ANIMASI BARIS HAMBURGER MENJADI SILANG (X) ─── */
+  .nav-ham {
+    cursor: pointer;
+    position: relative;
+    z-index: 1000; /* Memastikan tombol selalu berada di atas layer menu */
+    transition: transform 0.3s ease;
+  }
+
+  .nav-ham span {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  }
+
+  /* Garis atas berputar 45 derajat */
+  .nav-ham.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  /* Garis tengah memudar keluar */
+  .nav-ham.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  /* Garis bawah berputar -45 derajat */
+  .nav-ham.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
 /* ═══ TRUST CARD HOVER EFFECTS ═══ */
