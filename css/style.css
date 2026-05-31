@@ -1405,67 +1405,131 @@ a {
 }
 
 /* ==========================================================================
-   FIXED MOBILE MENU & HAMBURGER (ISOLATED PATCH)
+   PERBAIKAN MOBILE MENU & ANIMASI HAMBURGER (PREMIUM RE-ENGINEERED)
    ========================================================================== */
-@media (max-width: 768px) {
 
+/* 1. Sembunyikan Mobile Menu secara mutlak di layar Desktop/Laptop */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 2. Aktifkan & Munculkan Tombol Hamburger di HP */
+  .nav-ham {
+    display: flex !important; /* Memaksa tombol ham muncul di mobile */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-ham span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  }
+
+  /* Animasi Hamburger ke Silang (X) saat Open */
+  .nav-ham.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-ham.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  .nav-ham.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Sembunyikan Navigasi Horizontal Bawaan Desktop di HP */
+  .nav-links, .nav-right .nav-cta {
+    display: none !important;
+  }
+
+  /* 3. Re-Styling Tampilan Menu Mobile (SaaS Glassmorphism Minimalis) */
   .mobile-menu {
+    display: flex; /* Aktifkan flexbox hanya di mobile */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--bg-main);
+    background: rgba(3, 3, 5, 0.95); /* Menyesuaikan --bg-main dengan opacity */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 999;
-    display: flex;
     flex-direction: column;
-    padding: 120px 40px 40px;
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 32px;
+    
+    /* Animasi transisi Apple-Style (Slide Down + Fade) */
+    transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    
-    /* Mengubah translasi menjadi -100% agar efek slide-down dari atas layar terasa premium */
-    transform: translateY(-100%);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s;
-    
-    /* Proteksi: Mengunci klik tembus pandang saat menu tertutup */
-    pointer-events: none; 
+    pointer-events: none;
   }
 
-  /* PERBAIKAN UTAMA: Mengembalikan kemampuan interaksi klik di layar HP */
+  /* State ketika Menu Mobile Terbuka */
   .mobile-menu.open {
+    transform: translateY(0);
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto; /* <--- BARIS INI WAJIB ADA AGAR BISA DI-KLIK */
+    pointer-events: auto;
   }
 
-  /* ─── ANIMASI BARIS HAMBURGER MENJADI SILANG (X) ─── */
-  .nav-ham {
-    cursor: pointer;
-    position: relative;
-    z-index: 1000; /* Memastikan tombol selalu berada di atas layer menu */
+  /* Styling Link Navigasi di Dalam Menu Mobile */
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .mob-a {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .mob-a:hover, .mob-a.active {
+    color: var(--text-main);
+    transform: scale(1.05);
+  }
+
+  /* Tampilan Tombol CTA di Mobile */
+  .mob-cta {
+    margin-top: 16px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(255, 122, 0, 0.2);
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
     transition: transform 0.3s ease;
   }
 
-  .nav-ham span {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  }
-
-  /* Garis atas berputar 45 derajat */
-  .nav-ham.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  /* Garis tengah memudar keluar */
-  .nav-ham.active span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  /* Garis bawah berputar -45 derajat */
-  .nav-ham.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+  .mob-cta:hover {
+    transform: translateY(-2px);
   }
 }
 
