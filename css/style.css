@@ -1407,7 +1407,7 @@ a {
 /* ==========================================================================
    PERBAIKAN MOBILE MENU & ANIMASI HAMBURGER (PREMIUM RE-ENGINEERED)
    ========================================================================== */
-
+   
 /* 1. Sembunyikan Mobile Menu secara mutlak di layar Desktop/Laptop */
 .mobile-menu {
   display: none;
@@ -1660,4 +1660,59 @@ details.faq-card summary span.icon-toggle {
 
 .portfolio-item:hover .view-project-link span {
   transform: translateX(4px);
+}
+
+/* ==========================================================================
+   FINAL FORCE HYPER-FIX: MEMAKSA HAMBURGER MUNCUL (ANTI-OVERRIDE)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  /* 1. Paksa tombol menu utama muncul & memiliki space ukuran yang valid */
+  html body .nav-ham,
+  html body header .nav-ham,
+  html body .navbar .nav-ham {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 26px !important;
+    height: 18px !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 99999 !important; /* Berada di lapisan paling atas */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 2. Paksa 3 baris garis di dalamnya terlihat tebal, padat, dan berwarna putih */
+  html body .nav-ham span,
+  html body header .nav-ham span,
+  html body .navbar .nav-ham span {
+    display: block !important;
+    width: 100% !important;
+    height: 2.5px !important; /* Tebal garis */
+    background-color: #ffffff !important; /* Warna putih solid kontras tinggi */
+    border-radius: 4px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+  }
+
+  /* 3. Efek animasi silang (X) saat menu mobile aktif terbuka */
+  html body .nav-ham.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg) !important;
+  }
+  html body .nav-ham.active span:nth-child(2) {
+    opacity: 0 !important;
+    transform: translateX(-10px) !important;
+  }
+  html body .nav-ham.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg) !important;
+  }
+  
+  /* 4. Sembunyikan menu bawaan desktop agar tidak menumpuk */
+  .nav-links, .nav-right .nav-cta, .lang-toggle {
+    display: none !important;
+  }
 }
