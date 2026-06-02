@@ -1,0 +1,22 @@
+{
+  "short_name": "Faadhil Digital",
+  "name": "Faadhil Digital - Premium Web Development Agency",
+  "description": "Build world-class digital branding with Faadhil Digital. Exclusive layouts inspired by global startups, custom-built to skyrocket your conversion rate.",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#030305",
+  "theme_color": "#010102",
+  "display": "standalone",
+  "orientation": "portrait"
+}

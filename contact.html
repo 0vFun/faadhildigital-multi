@@ -1,191 +1,251 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Faadhil Digital | Jasa Pembuatan Website & Landing Page Premium</title>
+    <meta name="description" content="Mulai konsultasi gratis proyek digital Anda bersama Faadhil Digital. Hubungi kami melalui formulir pesan atau kontak langsung via WhatsApp untuk respon cepat.">
+    <meta name="keywords" content="hubungi faadhil digital, kontak web agency, konsultasi website gratis, jasa bikin website jakarta, bikin landing page premium">
+    <meta name="author" content="Faadhil Digital">
+    <meta name="theme-color" content="#030305">
 
-  <!-- SEO -->
-  <title>Hubungi Kami | Jasa Pembuatan Website Faadhil Digital</title>
-  <meta name="description" content="Mulai konsultasi gratis untuk proyek website Anda sekarang. Tim Faadhil Digital siap membantu bisnis Anda go digital dengan website performa tinggi."/>
-  <meta name="keywords" content="kontak faadhil digital, nomor whatsapp jasa website, hubungi pembuat web, konsultasi pembuatan website"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="author" content="Faadhil Digital"/>
-  <link rel="canonical" href="https://faadhildigital.com/contact.html"/>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Hubungi Faadhil Digital — Konsultasi Gratis"/>
-  <meta property="og:description" content="Punya ide hebat? Mari kita bicarakan. Hubungi kami via WhatsApp atau Email untuk mulai merancang website impianmu."/>
-  <meta property="og:url" content="https://faadhildigital.com/contact.html"/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faadhildigital.com/contact.html">
+    <meta property="og:title" content="Hubungi Faadhil Digital - Mulai Proyek Anda">
+    <meta property="og:description" content="Diskusikan arsitektur branding digital berkelas dunia bersama Faadhil Digital. Desain eksklusif siap melejitkan penjualan bisnis Anda.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
 
-  <!-- Theme & Fonts -->
-  <meta name="theme-color" content="#030305"/>
-  <link rel="icon" type="image/png" href="LOGO4721.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://faadhildigital.com/contact.html">
+    <meta property="twitter:title" content="Hubungi Faadhil Digital - Mulai Proyek Anda">
+    <meta property="twitter:description" content="Diskusikan arsitektur branding digital berkelas dunia bersama Faadhil Digital. Desain eksklusif siap melejitkan penjualan bisnis Anda.">
+    <meta property="twitter:image" content="assets/images/og-image.jpg">
 
-  <!-- CSS Terintegrasi -->
-  <link rel="stylesheet" href="css/style.css"/>
+    <!-- Favicon & Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Modular CSS Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/contact.css"> <!-- File CSS Baru khusus halaman Kontak -->
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" class="loader" role="status" aria-label="Loading">
-    <div class="loader-logo">
-      <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="48" height="48"/>
-      <span>Faadhil<strong>Digital</strong></span>
+    <!-- Premium Loading Screen -->
+    <div class="loader-screen" id="loaderScreen">
+        <div class="loader-content">
+            <span class="loader-logo">Faadhil Digital</span>
+            <div class="loader-bar"></div>
+        </div>
     </div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar" role="banner">
-    <div class="nav-container">
-      <a href="home.html" class="nav-logo" aria-label="Faadhil Digital - Beranda">
-        <img src="assets/LOGO4721.png" alt="Logo Faadhil Digital" width="32" height="32" loading="eager"/>
-        <span>Faadhil<strong>Digital</strong></span>
-      </a>
+    <!-- Cursor Glow Effect (Desktop Only) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu utama">
-        <a href="index.html" class="nav-a">Home</a>
-        <a href="pricing.html" class="nav-a">Pricing</a>
-        <a href="portfolio.html" class="nav-a">Portfolio</a>
-        <a href="blog.html" class="nav-a">Blog</a>
-        <a href="faq.html" class="nav-a">FAQ</a>
-        <a href="contact.html" class="nav-a active">Contact</a>
-      </nav>
+    <!-- Header Navigation -->
+    <header class="navbar-header" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo-wrapper" aria-label="Faadhil Digital Home">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="navbar-logo-img">
+            </a>
+        
+            <nav class="navbar-menu" id="navbarMenu">
+                <a href="index.html" class="menu-link" data-translate="nav-home">Home</a>
+                <a href="pricing.html" class="menu-link" data-translate="nav-pricing">Pricing</a>
+                <a href="portfolio.html" class="menu-link" data-translate="nav-portfolio">Portfolio</a>
+                <a href="blog.html" class="menu-link" data-translate="nav-blog">Blog</a>
+                <a href="faq.html" class="menu-link" data-translate="nav-faq">FAQ</a>
+                <a href="contact.html" class="menu-link active" data-translate="nav-contact">Contact</a>
+                <div class="mobile-cta-wrapper">
+                    <a href="https://wa.me/6282317304798" target="_blank" rel="noopener" class="btn btn-primary" data-translate="cta-nav">Konsultasi Gratis</a>
+                </div>
+            </nav>
 
-      <div class="nav-right">
-        <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" class="nav-cta">
-          <span>Konsultasi</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- ═══ CONTACT HERO & SECTION ═══ -->
-    <section class="section" style="padding-top: 140px; padding-bottom: 100px;">
-      <div class="con">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 64px;">
-          <div class="sec-badge">Hubungi Kami</div>
-          <h1 class="sec-title" style="font-size: 40px; margin-bottom: 16px;">
-            Mari Mulai <br/><span class="hh-gradient">Proyek Hebat Anda</span>
-          </h1>
-          <p class="sec-sub">
-            Punya pertanyaan atau ingin langsung berdiskusi tentang website impian Anda? Tim kami siap merespons dengan cepat.
-          </p>
-        </div>
-
-        <!-- LAYOUT DUA KOLOM -->
-        <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; max-width: 1000px; margin: 0 auto;">
-          
-          <!-- KOLOM KIRI: INFO KONTAK RESMI -->
-          <div style="flex: 1 1 350px; display: flex; flex-direction: column; gap: 24px;">
-            
-            <!-- WhatsApp Card -->
-            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 16px;">
-              <div style="font-size: 24px; margin-bottom: 12px;">💬</div>
-              <h4 style="color: #fff; font-size: 16px; margin: 0 0 6px 0; font-weight: 600;">WhatsApp Jalur Cepat</h4>
-              <p style="font-size: 14px; color: #8e8e93; margin: 0 0 16px 0;">Respons paling instan, diskusi kasual langsung dengan tim developer kami.</p>
-              <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer" style="color: #10b981; text-decoration: none; font-size: 15px; font-weight: 700;">+62 823-1730-4798</a>
+            <div class="navbar-actions">
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">ID</button>
+                <a href="https://wa.me/6282317304798" target="_blank" rel="noopener" class="btn btn-primary btn-desktop-nav" data-translate="cta-nav">Konsultasi Gratis</a>
+        
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+        </div>
+    </header>
 
-            <!-- Email Card -->
-            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 16px;">
-              <div style="font-size: 24px; margin-bottom: 12px;">✉️</div>
-              <h4 style="color: #fff; font-size: 16px; margin: 0 0 6px 0; font-weight: 600;">Email Penawaran</h4>
-              <p style="font-size: 14px; color: #8e8e93; margin: 0 0 16px 0;">Untuk kebutuhan corporate, pengiriman berkas brief proyek resmi, atau kerja sama formal.</p>
-              <a href="mailto:ahmadfaadhil854@gmail.com" style="color: #00d2ff; text-decoration: none; font-size: 15px; font-weight: 700;">ahmadfaadhil854@gmail.com</a>
+    <main>
+        <!-- CONTACT HERO HEADER -->
+        <section class="contact-hero section-padding bg-dark-accent">
+            <div class="contact-hero-glow"></div>
+            <div class="container text-center">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tagline" data-translate="contact-tagline">Get In Touch</span>
+                    <h1 class="section-title" data-translate="contact-title">Mari Mulai Sesuatu yang Hebat</h1>
+                    <p class="section-subtitle" data-translate="contact-subtitle">Punya ide proyek luar biasa atau butuh konsultasi teknis? Hubungi kami. Tim kami siap merancang solusi web terbaik untuk bisnis Anda.</p>
+                </div>
             </div>
+        </section>
 
-            <!-- Lokasi Card -->
-            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 24px; border-radius: 16px;">
-              <div style="font-size: 24px; margin-bottom: 12px;">📍</div>
-              <h4 style="color: #fff; font-size: 16px; margin: 0 0 6px 0; font-weight: 600;">Lokasi Operasional</h4>
-              <p style="font-size: 14px; color: #8e8e93; margin: 0; line-height: 1.6;">
-                Indonesia — Siap melayani pembuatan website untuk UMKM dan Corporate dari seluruh wilayah Nusantara secara remote/online.
-              </p>
+        <!-- CONTACT INTERACTIVE HUB SECTION -->
+        <section class="contact-main-section section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <!-- Left Column: Contact Info Cards -->
+                    <div class="contact-info-wrapper reveal-fade-up">
+                        <div class="info-cluster-card">
+                            <h2 class="info-cluster-title" data-translate="contact-info-heading">Informasi Kontak</h2>
+                            <p class="info-cluster-desc" data-translate="contact-info-sub">Jangan ragu menghubungi kami melalui saluran resmi di bawah ini untuk respon yang lebih terarah.</p>
+                            
+                            <div class="info-links-list">
+                                <!-- WhatsApp -->
+                                <a href="https://wa.me/6282317304798" target="_blank" rel="noopener" class="info-item-link">
+                                    <div class="info-icon-box">💬</div>
+                                    <div>
+                                        <h4 class="info-label">WhatsApp Hotline</h4>
+                                        <p class="info-detail-text">0823-1730-4798</p>
+                                    </div>
+                                </a>
+                                
+                                <!-- Email -->
+                                <a href="mailto:ahmadfaadhil854@gmail.com" class="info-item-link">
+                                    <div class="info-icon-box">✉️</div>
+                                    <div>
+                                        <h4 class="info-label">Email Support</h4>
+                                        <p class="info-detail-text">ahmadfaadhil854@gmail.com</p>
+                                    </div>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="https://www.instagram.com/faadhildigital" target="_blank" rel="noopener" class="info-item-link">
+                                    <div class="info-icon-box">📸</div>
+                                    <div>
+                                        <h4 class="info-label">Instagram Profile</h4>
+                                        <p class="info-detail-text">@faadhildigital</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Jam Operasional Panel -->
+                            <div class="info-hours-box">
+                                <h4 class="hours-box-title" data-translate="contact-hours-title">⏰ Jam Kerja Operasional:</h4>
+                                <ul class="hours-list-details">
+                                    <li><span>Jumat – Senin:</span> <strong>16:30 - 21:30 WIB</strong></li>
+                                    <li><span>Selasa:</span> <strong>16:30 - 17:50 WIB</strong></li>
+                                    <li><span>Rabu:</span> <strong>17:50 - 21:30 WIB</strong></li>
+                                    <li><span>Kamis:</span> <span class="badge-off">Libur / Tutup</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Glassmorphism Message Form -->
+                    <div class="contact-form-wrapper reveal-fade-up">
+                        <form class="contact-glass-form" id="contactForm" action="#" method="POST">
+                            <h3 class="form-block-title" data-translate="contact-form-title">Kirimkan Pesan Langsung</h3>
+                            
+                            <div class="form-group-row">
+                                <div class="form-input-block">
+                                    <label for="clientName" class="form-field-label">Nama Lengkap</label>
+                                    <input type="text" id="clientName" name="name" class="form-theme-input" placeholder="Masukkan nama Anda" required autocomplete="name">
+                                </div>
+                                <div class="form-input-block">
+                                    <label for="clientEmail" class="form-field-label">Alamat Email</label>
+                                    <input type="email" id="clientEmail" name="email" class="form-theme-input" placeholder="name@company.com" required autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="form-input-block">
+                                <label for="projectType" class="form-field-label">Jenis Layanan Website</label>
+                                <select id="projectType" name="service" class="form-theme-input select-theme">
+                                    <option value="Landing Page">Landing Page Premium</option>
+                                    <option value="Company Profile">Company Profile Korporasi/UMKM</option>
+                                    <option value="Toko Online">Toko Online (E-Commerce)</option>
+                                    <option value="Custom Website">Website Sistem Kustom</option>
+                                    <option value="Lainnya">Kebutuhan Lainnya</option>
+                                </select>
+                            </div>
+
+                            <div class="form-input-block">
+                                <label for="clientMessage" class="form-field-label">Detail Singkat Rencana Proyek Anda</label>
+                                <textarea id="clientMessage" name="message" rows="5" class="form-theme-input textarea-theme" placeholder="Gambarkan secara singkat model bisnis atau fitur utama website yang ingin Anda buat..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full-width" id="btnSubmitForm">
+                                <span data-translate="contact-btn-send">Kirim Penawaran Ide</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
+        </section>
+    </main>
 
-          </div>
-
-          <!-- KOLOM KANAN: FORM BRIEF INTERAKTIF -->
-          <div style="flex: 1.2 1 400px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.04); padding: 40px 32px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-            <h3 style="color: #817979; font-size: 22px; margin-top: 0; margin-bottom: 8px; font-weight: 700;">Kirim Pesan Langsung</h3>
-            <p style="font-size: 14px; color: #8e8e93; margin-bottom: 32px;">Isi formulir ringkas di bawah ini untuk memberi tahu kami gambaran website yang Anda butuhkan.</p>
-            
-            <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
-              <div>
-                <label style="display: block; color: #fff; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Nama Lengkap / Bisnis</label>
-                <input type="text" id="contactName" placeholder="Contoh: Budi Prasetyo" required style="width: 100%; padding: 12px 16px; background: #0a0a0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; outline: none; box-sizing: border-box; transition: border-color 0.2s;"/>
-              </div>
-
-              <div>
-                <label style="display: block; color: #a88888; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Pilih Paket yang Diminati</label>
-                <select id="contactPackage" style="width: 100%; padding: 12px 16px; background: #0a0a0f; border: 1px solid rgba(54, 49, 49, 0.08); border-radius: 8px; color: #746464; font-family: inherit; font-size: 14px; outline: none; box-sizing: border-box; transition: border-color 0.2s; cursor: pointer;">
-                  <option value="Belum Memilih">-- Pilih Paket Kebijakan --</option>
-                  <option value="Basic (Rp 200.000)">Basic — Rp 200.000</option>
-                  <option value="Professional (Rp 600.000)">Professional — Rp 600.000</option>
-                  <option value="Premium (Rp 1.200.000)">Premium — Rp 1.200.000</option>
-                  <option value="Custom Proyek">Custom Project (Sistem Khusus)</option>
-                </select>
-              </div>
-
-              <div>
-                <label style="display: block; color: #fff; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Detail Kebutuhan / Pesan</label>
-                <textarea id="contactMessage" rows="5" placeholder="Ceritakan singkat tentang jenis produk, referensi desain, atau fitur utama yang Anda mau..." required style="width: 100%; padding: 12px 16px; background: #0a0a0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; outline: none; box-sizing: border-box; resize: vertical; transition: border-color 0.2s;"></textarea>
-              </div>
-
-              <button type="submit" class="nav-cta" style="width: 100%; padding: 14px; font-size: 15px; border-radius: 8px; cursor: pointer; text-align: center; justify-content: center; margin-top: 10px;">
-                <span>Kirim via WhatsApp →</span>
-              </button>
-            </form>
-          </div>
-
+    <!-- FOOTER -->
+    <footer class="footer-premium">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="footer-logo-img">
+                <p class="footer-tagline">Build Your Digital Presence</p>
+                <p class="footer-since">Since 2026</p>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Navigasi</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Eksplorasi</h4>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Kontak</h4>
+                <p class="contact-info-text">WA: 0823-1730-4798</p>
+                <p class="contact-info-text">Email: ahmadfaadhil854@gmail.com</p>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="con">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="36" height="36" loading="lazy"/>
-          <div>
-            <div class="fb-name">Faadhil<strong>Digital</strong></div>
-            <div class="fb-tag">Build Your Digital Presence</div>
-          </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Faadhil Digital. All Rights Reserved.</p>
         </div>
-        <div class="footer-nav-wrap">
-          <div class="footer-col">
-            <h4>Halaman</h4>
-            <a href="index.html">Home</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="blog.html">Blog</a>
-          </div>
-          <div class="footer-col">
-            <h4>Info</h4>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4>Kontak</h4>
-            <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="mailto:ahmadfaadhil854@gmail.com">Email</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-btm">
-        <p>© 2026 Faadhil Digital. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <!-- Global Floating WhatsApp & Back to Top Button -->
+    <a href="https://wa.me/6282317304798" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053 1.048 11.43 1.048c-5.44 0-9.866 4.374-9.87 9.802-.001 1.73.463 3.42 1.345 4.927l-.997 3.641 3.74-.965zm11.541-6.155c-.3-.149-1.777-.864-2.052-.962-.275-.1-.475-.149-.675.15-.2.299-.775.962-.95 1.162-.175.2-.35.224-.65.075-3.53-1.508-4.507-2.484-5.38-3.993-.225-.389-.025-.6.174-.8.18-.178.399-.449.6-.674.2-.224.266-.374.399-.623.133-.25.067-.474-.033-.674-.1-.2-4.75-1.124-5.65-1.323-.875-.199-1.513-.162-2.074.114-.425.21-.925.75-.925 1.474 0 .724.4 1.424.95 2.148.55.725 4.625 6.942 10.95 9.47 4.15 1.657 5.025 1.511 6.8 1.162.55-.108 1.778-.711 2.027-1.396.25-.685.25-1.272.174-1.396-.075-.124-.275-.2-.575-.349z"/></svg>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Core Modular Scripts -->
+    <script src="js/variables.js"></script>
+    <script src="js/pwa.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/language.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>

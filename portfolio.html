@@ -1,240 +1,228 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Mahakarya Digital Riil - Faadhil Digital</title>
+    <meta name="description"
+        content="Jelajahi hasil kerja riil pembuatan website dan landing page premium oleh Faadhil Digital. Terbukti nyata, fungsional, dan berdesain modern kelas dunia.">
+    <meta name="theme-color" content="#030305">
 
-  <!-- SEO -->
-  <title>Portofolio Hasil Kerja Jasa Pembuatan Website | Faadhil Digital</title>
-  <meta name="description" content="Lihat galeri proyek website yang telah sukses kami bangun. Mulai dari landing page konversi tinggi, company profile premium, hingga web app custom."/>
-  <meta name="keywords" content="portofolio website, contoh desain web, hasil kerja faadhil digital, bikin web company profile, karya digital"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="author" content="Faadhil Digital"/>
-  <link rel="canonical" href="https://faadhildigital.com/portfolio.html"/>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Portofolio Karya Terbaik — Faadhil Digital"/>
-  <meta property="og:description" content="Bukti nyata kualitas premium. Jelajahi hasil karya website modern, responsif, dan ultra cepat yang kami buat untuk klien."/>
-  <meta property="og:url" content="https://faadhildigital.com/portfolio.html"/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faadhildigital.com/portfolio.html">
+    <meta property="og:title" content="Portfolio Mahakarya Digital Riil - Faadhil Digital">
+    <meta property="og:description"
+        content="Bukti pengerjaan website nyata dengan performa tinggi dan desain standar global.">
+    <meta property="og:image" content="assets/images/HMR-STORE">
 
-  <!-- Theme & Fonts -->
-  <meta name="theme-color" content="#030305"/>
-  <link rel="icon" type="image/png" href="LOGO4721.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
-  <!-- CSS Terintegrasi -->
-  <link rel="stylesheet" href="css/style.css"/>
+    <!-- Modular CSS Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" class="loader" role="status" aria-label="Loading">
-    <div class="loader-logo">
-      <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="48" height="48"/>
-      <span>Faadhil<strong>Digital</strong></span>
-    </div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
-
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo" aria-label="Faadhil Digital - Beranda">
-        <img src="assets/LOGO4721.png" alt="Logo Faadhil Digital" width="32" height="32" loading="eager"/>
-        <span>Faadhil<strong>Digital</strong></span>
-      </a>
-
-      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu utama">
-        <a href="index.html" class="nav-a">Home</a>
-        <a href="pricing.html" class="nav-a">Pricing</a>
-        <a href="portfolio.html" class="nav-a active">Portfolio</a>
-        <a href="blog.html" class="nav-a">Blog</a>
-        <a href="faq.html" class="nav-a">FAQ</a>
-        <a href="contact.html" class="nav-a">Contact</a>
-      </nav>
-
-      <div class="nav-right">
-        <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" class="nav-cta">
-          <span>Konsultasi</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- ═══ PORTFOLIO HERO ═══ -->
-    <section class="section" style="padding-top: 140px; text-align: center;">
-      <div class="con">
-        <div class="sec-badge">Karya Kami</div>
-        <h1 class="sec-title" style="font-size: 40px; margin-bottom: 16px;">
-          Eksplorasi Proyek <br/><span class="hh-gradient">Website Terbaik Klien</span>
-        </h1>
-        <p class="sec-sub" style="margin: 0 auto 40px auto; max-width: 600px;">
-          Dari ide mentah hingga menjadi platform digital berkecepatan tinggi yang menghasilkan konversi penjualan nyata.
-        </p>
-
-        <!-- FILTER NAVIGATION BUTTONS -->
-        <div class="filter-wrapper" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 48px; flex-wrap: wrap;">
-          <button class="filter-btn active" data-filter="all">Semua Karya</button>
-          <button class="filter-btn" data-filter="landing">Landing Page</button>
-          <button class="filter-btn" data-filter="company">Company Profile</button>
-          <button class="filter-btn" data-filter="webapp">Web Application</button>
+    <!-- Premium Loading Screen -->
+    <div class="loader-screen" id="loaderScreen">
+        <div class="loader-content">
+            <span class="loader-logo">Faadhil Digital</span>
+            <div class="loader-bar"></div>
         </div>
+    </div>
 
-        <!-- PORTFOLIO GRID (FOKUS 1 MASTERPIECE PROJECT) -->
-        <div class="portfolio-grid" style="display: grid; grid-template-columns: 1fr; max-width: 750px; margin: 0 auto; gap: 32px; text-align: left;">
-          
-          <!-- Nagara Store - Project Pertama Faadhil Digital -->
-          <article class="portfolio-item" data-category="webapp" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
-            <!-- GAMBAR MOCKUP UTAMA (Menggunakan Screenshot Kamu) -->
-            <div style="width: 100%; height: auto; min-height: 250px; max-height: 420px; background: #0a0a0f; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center;">
-              <img src="assets/HMR-STORE.png" alt="Mockup Nagara Store - Faadhil Digital" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; transition: transform 0.5s ease;" class="portfolio-img"/>
-            </div>
-              <!-- Nanti kamu bisa ganti background ini dengan gambar screenshot berukuran pas -->
-              <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, rgba(0, 210, 255, 0.15) 0%, rgba(255, 170, 84, 0.1) 100%); padding: 24px; text-align: center;">
-                <span style="font-size: 48px; margin-bottom: 12px;">🛒</span>
-                <h4 style="font-size: 24px; font-weight: 700; letter-spacing: 0.5px; margin: 0 0 8px 0; color: #fff;">NAGARA STORE</h4>
-                <p style="font-size: 13px; color: var(--brand-primary, #00d2ff); font-weight: 500; background: rgba(0,210,255,0.1); padding: 4px 12px; border-radius: 20px;">Live Production Project</p>
-              </div>
-            </div>
-            <div style="padding: 32px;">
-              <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
-                <span style="font-size: 11px; background: rgba(255,170,84,0.1); color: #ffaa54; padding: 4px 12px; border-radius: 30px; font-weight: 600; text-transform: uppercase;">E-Commerce Web App</span>
-                <span style="font-size: 11px; background: rgba(255,255,255,0.05); color: #8e8e93; padding: 4px 12px; border-radius: 30px; font-weight: 500;">Responsive Design</span>
-              </div>
-              
-              <h3 style="color: #fff; font-size: 24px; margin: 0 0 16px 0; font-weight: 700;">Nagara Store — Platform Top-Up & Digital Goods</h3>
-              <p style="font-size: 15px; color: #8e8e93; line-height: 1.7; margin-bottom: 24px;">
-                Sebuah aplikasi web e-commerce interaktif yang dirancang khusus untuk melayani transaksi pembelian produk digital dan top-up game. Berfokus pada pengalaman pengguna yang responsif, navigasi produk instan, serta integrasi visual yang modern dan dinamis agar memudahkan proses checkout pelanggan secara real-time.
-              </p>
+    <!-- Cursor Glow Effect (Desktop Only) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-              <!-- SPESIFIKASI TEKNIS & FITUR UNGGULAN -->
-              <div style="margin-bottom: 28px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 20px; border-radius: 12px;">
-                <h4 style="color: #fff; font-size: 14px; margin-top: 0; margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Fitur & Teknologi yang Diterapkan:</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                  <div style="font-size: 13px; color: #8e8e93; display: flex; align-items: center; gap: 8px;">
-                    <span style="color: #10b981;">⚡</span> Ultra Fast Loading Speed
-                  </div>
-                  <div style="font-size: 13px; color: #8e8e93; display: flex; align-items: center; gap: 8px;">
-                    <span style="color: #00d2ff;">📱</span> Mobile-First Responsive Design
-                  </div>
-                  <div style="font-size: 13px; color: #8e8e93; display: flex; align-items: center; gap: 8px;">
-                    <span style="color: #ffaa54;">🎯</span> SEO Friendly Clean Code
-                  </div>
-                  <div style="font-size: 13px; color: #8e8e93; display: flex; align-items: center; gap: 8px;">
-                    <span style="color: #ef4444;">🛡️</span> Secure Vercel Deployment
-                  </div>
+    <!-- Header Navigation (Sinkron 6 Menu Utama Utama) -->
+    <header class="navbar-header" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo-wrapper" aria-label="Faadhil Digital Home">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="navbar-logo-img">
+            </a>
+
+            <nav class="navbar-menu" id="navbarMenu">
+                <a href="index.html" class="menu-link" data-translate="nav-home">Home</a>
+                <a href="pricing.html" class="menu-link" data-translate="nav-pricing">Pricing</a>
+                <a href="portfolio.html" class="menu-link active" data-translate="nav-portfolio">Portfolio</a>
+                <a href="blog.html" class="menu-link" data-translate="nav-blog">Blog</a>
+                <a href="faq.html" class="menu-link" data-translate="nav-faq">FAQ</a>
+                <a href="contact.html" class="menu-link" data-translate="nav-contact">Contact</a>
+                <div class="mobile-cta-wrapper">
+                    <a href="https://wa.me/6282317304798" target="_blank" rel="noopener" class="btn btn-primary"
+                        data-translate="cta-nav">Konsultasi Gratis</a>
                 </div>
-              </div>
-              
-              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; flex-wrap: wrap; gap: 16px;">
-                <a href="https://nagara-store2.vercel.app" target="_blank" rel="noopener noreferrer" class="view-project-link" style="color: #00d2ff; text-decoration: none; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
-                  Kunjungi Website Live <span style="transition: transform 0.2s ease;">→</span>
-                </a>
-                <span style="font-size: 13px; color: #444; font-weight: 500;">Crafted by Faadhil Digital</span>
-              </div>
+            </nav>
+
+            <div class="navbar-actions">
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">ID</button>
+                <a href="https://wa.me/6282317304798" target="_blank" rel="noopener"
+                    class="btn btn-primary btn-desktop-nav" data-translate="cta-nav">Konsultasi Gratis</a>
+
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-          </article>
-
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- ═══ SEKSI ALUR KERJA (WORKFLOW) ═══ -->
-    <section class="section" style="padding-top: 40px; padding-bottom: 40px; background: rgba(255,255,255,0.01);">
-      <div class="con">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
-          <div class="sec-badge">Proses Kami</div>
-          <h2 class="sec-title" style="font-size: 32px; margin-bottom: 12px;">Bagaimana Kami <br/><span class="hh-gradient">Membangun Website Anda</span></h2>
-          <p class="sec-sub">Setiap baris kode dirancang dengan perencanaan matang demi menghasilkan performa terbaik.</p>
+    <!-- Main Content Area -->
+    <main style="padding-top: 140px;">
+
+        <!-- HERO PORTFOLIO SECTION -->
+        <section class="pricing-hero section-padding"
+            style="background: radial-gradient(circle at bottom, rgba(255, 122, 0, 0.02) 0%, transparent 70%);">
+            <div class="container text-center reveal-fade-up">
+                <span class="section-tagline" data-translate="port-tagline">Our Work</span>
+                <h1 class="section-title" data-translate="port-title">Hasil Kerja Nyata & Transparan</h1>
+                <p class="section-subtitle" data-translate="port-subtitle">Kami tidak memalsukan data. Inilah
+                    satu-satunya portofolio riil mahakarya digital premium yang selesai kami bangun dengan dedikasi
+                    penuh.</p>
+
+                <!-- Dynamic Badges Ticker -->
+                <div class="hero-badges-ticker" style="margin-top: 2rem;">
+                    <div class="badge-track">
+                        <span class="ticker-badge">💎 100% Honest Case Study</span>
+                        <span class="ticker-badge">⚡ Real Production Code</span>
+                        <span class="ticker-badge">📱 Flawless Live Performance</span>
+                        <span class="ticker-badge">🎯 Verified Client Result</span>
+                        <!-- Duplicate for Infinite Loop Effect -->
+                        <span class="ticker-badge">💎 100% Honest Case Study</span>
+                        <span class="ticker-badge">⚡ Real Production Code</span>
+                        <span class="ticker-badge">📱 Flawless Live Performance</span>
+                        <span class="ticker-badge">🎯 Verified Client Result</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO GRID SECTION (Hanya Berisi 1 Kartu Riil & Diposisikan Ditengah) -->
+        <section class="portfolio-cards-section" style="margin-bottom: 120px; padding: 20px 0;">
+            <div class="container" style="display: flex; justify-content: center;">
+
+                <div class="portfolio-grid"
+                    style="display: flex; justify-content: center; width: 100%; max-width: 650px;">
+                    <!-- Proyek Riil Tunggal: Nagara Store -->
+                    <div class="portfolio-card reveal-fade-up" style="width: 100%;">
+                        <div class="portfolio-img-container">
+                            <!-- JALUR GAMBAR TELAH DISESUAIKAN KE ASET GAMBAR KAMU -->
+                            <img src="assets/images/HMR-STORE.png" alt="Nagara Store Website Showcase"
+                                class="portfolio-img" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <a href="https://nagara-store2.vercel.app/" target="_blank" rel="noopener"
+                                    class="btn btn-primary" data-translate="port-btn-demo">Live Demo Website &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info" style="padding: 2rem;">
+                            <span class="portfolio-category"
+                                style="color: var(--primary); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;"
+                                data-translate="port-1-cat">E-Commerce
+                                / Building Materials</span>
+                            <h3 class="portfolio-project-title"
+                                style="font-size: 1.75rem; margin: 0.5rem 0 1rem; color: #fff;"
+                                data-translate="port-1-title">Nagara Store Online
+                                Store</h3>
+                            <p class="portfolio-project-desc" style="color: var(--text-muted); line-height: 1.6;"
+                                data-translate="port-1-desc">
+                                Platform aplikasi web toko online retail bahan bangunan modern. Dibangun khusus dengan
+                                struktur arsitektur yang ringan, navigasi katalog produk instan, serta berfokus penuh
+                                pada kenyamanan belanja via perangkat ponsel (*mobile-first design*).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CTA CONVERSION STRATEGY SECTION -->
+        <section class="cta-conversion-section section-padding bg-dark-accent"
+            style="border-top: 1px solid var(--border-premium);">
+            <div class="container">
+                <div class="cta-glass-card reveal-fade-up">
+                    <div class="cta-card-glow"></div>
+                    <h2 class="cta-headline" data-translate="port-cta-head">Siap Menjadi Mahakarya Riil Berikutnya?</h2>
+                    <p class="cta-subheadline" data-translate="port-cta-sub">Mari bangun website bisnis Anda dengan
+                        integritas kode yang jujur,
+                        performa kilat, dan desain premium tanpa rekayasa data.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                        <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital,%20saya%20tertarik%20membuat%20website%20seperti%20Nagara%20Store"
+                            target="_blank" rel="noopener" class="btn btn-primary btn-large">
+                            <span data-translate="port-cta-wa">Konsultasi via WhatsApp</span>
+                        </a>
+                        <a href="pricing.html" class="btn btn-outline" style="padding: 14px 28px;"
+                            data-translate="port-cta-price">Lihat Paket Harga</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (6 Menu Eksplorasi & Navigasi Terstruktur Lengkap) -->
+    <footer class="footer-premium">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="footer-logo-img">
+                <p class="footer-tagline" style="margin-top: 1rem;">Build Your Digital Presence</p>
+                <p class="footer-since">Since 2026</p>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Navigasi</h4>
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Eksplorasi</h4>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Kontak</h4>
+                <p class="contact-info-text">WA: 0823-1730-4798</p>
+                <p class="contact-info-text">Email: ahmadfaadhil854@gmail.com</p>
+            </div>
         </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
-          <!-- Langkah 1 -->
-          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); padding: 24px; border-radius: 16px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--brand-primary, #00d2ff); margin-bottom: 12px;">01</div>
-            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Analisis & Strategi</h4>
-            <p style="font-size: 13px; color: #8e8e93; line-height: 1.6; margin: 0;">Kami mempelajari bisnis Anda, kompetitor, dan target pasar untuk menentukan struktur navigasi terbaik.</p>
-          </div>
-
-          <!-- Langkah 2 -->
-          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); padding: 24px; border-radius: 16px;">
-            <div style="font-size: 24px; font-weight: 800; color: #ffaa54; margin-bottom: 12px;">02</div>
-            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Desain UI/UX Premium</h4>
-            <p style="font-size: 13px; color: #8e8e93; line-height: 1.6; margin: 0;">Merancang visual website yang modern, bersih, dan super responsif di semua perangkat (HP, Tablet, Desktop).</p>
-          </div>
-
-          <!-- Langkah 3 -->
-          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); padding: 24px; border-radius: 16px;">
-            <div style="font-size: 24px; font-weight: 800; color: #10b981; margin-bottom: 12px;">03</div>
-            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Coding & Optimasi</h4>
-            <p style="font-size: 13px; color: #8e8e93; line-height: 1.6; margin: 0;">Menulis kode yang bersih, mengoptimasi kecepatan loading (Speed Ultra), serta menyelaraskan struktur SEO dasar.</p>
-          </div>
-
-          <!-- Langkah 4 -->
-          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); padding: 24px; border-radius: 16px;">
-            <div style="font-size: 24px; font-weight: 800; color: #ef4444; margin-bottom: 12px;">04</div>
-            <h4 style="color: #fff; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Testing & Launch</h4>
-            <p style="font-size: 13px; color: #8e8e93; line-height: 1.6; margin: 0;">Pengujian menyeluruh pada semua tombol dan fungsi formulir sebelum akhirnya website resmi di-deploy ke server live.</p>
-          </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Faadhil Digital. All Rights Reserved.</p>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- ═══ BOTTOM CALL TO ACTION ═══ -->
-    <section class="section" style="padding-bottom: 120px;">
-      <div class="con" style="max-width: 800px; text-align: center; background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%); border: 1px solid rgba(255,255,255,0.05); padding: 56px 32px; border-radius: 24px;">
-        <h2 class="sec-title" style="font-size: 32px; margin-bottom: 12px;">Ingin Website Anda Berada <br/>di Daftar <span class="hh-gradient">Sukses Ini?</span></h2>
-        <p class="sec-sub" style="margin: 0 auto 40px auto; max-width: 600px;">
-          Fokus pada kualitas, bukan kuantitas. Intip proyek andalan pertama yang berhasil kami bangun dengan optimasi performa tinggi.
-        </p>
-        <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20tertarik%20membuat%20website%20setelah%20melihat%20portofolio" target="_blank" rel="noopener noreferrer" class="nav-cta" style="padding: 14px 32px; font-size: 15px;">
-          <span>Mulai Proyek Bersama</span>
-        </a>
-      </div>
-    </section>
-  </main>
+    <!-- Global Floating WhatsApp Button -->
+    <a href="https://wa.me/6282317304798" class="floating-whatsapp" target="_blank" rel="noopener"
+        aria-label="Chat WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053 1.048 11.43 1.048c-5.44 0-9.866 4.374-9.87 9.802-.001 1.73.463 3.42 1.345 4.927l-.997 3.641 3.74-.965zm11.541-6.155c-.3-.149-1.777-.864-2.052-.962-.275-.1-.475-.149-.675.15-.2.299-.775.962-.95 1.162-.175.2-.35.224-.65.075-3.53-1.508-4.507-2.484-5.38-3.993-.225-.389-.025-.6.174-.8.18-.178.399-.449.6-.674.2-.224.266-.374.399-.623.133-.25.067-.474-.033-.674-.1-.2-4.75-1.124-5.65-1.323-.875-.199-1.513-.162-2.074.114-.425.21-.925.75-.925 1.474 0 .724.4 1.424.95 2.148.55.725 4.625 6.942 10.95 9.47 4.15 1.657 5.025 1.511 6.8 1.162.55-.108 1.778-.711 2.027-1.396.25-.685.25-1.272.174-1.396-.075-.124-.275-.2-.575-.349z" />
+        </svg>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="con">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="36" height="36" loading="lazy"/>
-          <div>
-            <div class="fb-name">Faadhil<strong>Digital</strong></div>
-            <div class="fb-tag">Build Your Digital Presence</div>
-          </div>
-        </div>
-        <div class="footer-nav-wrap">
-          <div class="footer-col">
-            <h4>Halaman</h4>
-            <a href="index.html">Home</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="blog.html">Blog</a>
-          </div>
-          <div class="footer-col">
-            <h4>Info</h4>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4>Kontak</h4>
-            <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="mailto:ahmadfaadhil854@gmail.com">Email</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-btm">
-        <p>© 2026 Faadhil Digital. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+    <!-- Core External Script Links -->
+    <script src="js/variables.js"></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/language.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
+
 </html>

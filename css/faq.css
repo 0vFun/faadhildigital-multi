@@ -1,0 +1,170 @@
+/* ==========================================================================
+   FAQ PAGE STYLESHEET (css/faq.css)
+   Premium Minimalist Apple/Stripe Style - Faadhil Digital
+   ========================================================================== */
+
+/* FAQ Hero Section */
+.faq-hero {
+    position: relative;
+    padding-top: calc(var(--nav-height, 80px) + 4rem);
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+
+/* Accordion Wrapper Container */
+.faq-accordion-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Individual Accordion Item (Menggunakan Native <details>) */
+.faq-accordion-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Menghilangkan tanda segitiga bawaan browser pada tag <summary> */
+.faq-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    user-select: none;
+    gap: 1.5rem;
+    list-style: none; /* Untuk Chrome/Firefox */
+}
+
+.faq-trigger::-webkit-details-marker {
+    display: none; /* Untuk Safari */
+}
+
+/* Question Typography */
+.faq-question {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-light, #ffffff);
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.faq-accordion-item:hover .faq-question {
+    color: var(--primary-color, #a855f7);
+}
+
+/* Arrow Icon Wrapper */
+.faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted, #94a3b8);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-icon svg {
+    transition: transform 0.3s ease;
+}
+
+/* Panel Body Content & Answer Typography */
+.faq-panel {
+    overflow: hidden;
+}
+
+.faq-answer {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted, #94a3b8);
+    padding: 0 2rem 1.5rem 2rem;
+    margin: 0;
+}
+
+/* Hours Custom List Styling inside FAQ */
+.faq-hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq-hours-list li {
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.faq-hours-list li::before {
+    content: "•";
+    color: var(--primary-color, #a855f7);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.text-error {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   NATIVE OPEN STATE STYLE (Kondisi saat elemen diklik/terbuka)
+   ========================================================================== */
+.faq-accordion-item[open] {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.faq-accordion-item[open] .faq-question {
+    color: var(--primary-color, #a855f7);
+}
+
+.faq-accordion-item[open] .faq-icon {
+    background: var(--primary-color, #a855f7);
+    color: #ffffff;
+}
+
+.faq-accordion-item[open] .faq-icon svg {
+    transform: rotate(180deg); /* Panah berputar otomatis saat terbuka */
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+    .faq-hero {
+        padding-top: calc(var(--nav-height, 80px) + 2rem);
+        padding-bottom: 2rem;
+    }
+    
+    .faq-trigger {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+        font-size: 0.9375rem;
+    }
+}

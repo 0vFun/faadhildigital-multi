@@ -1,0 +1,210 @@
+/* GLOBAL RESET & BASE STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-premium);
+    color: var(--text-main);
+    font-family: var(--font-global);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    position: relative;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+.bg-dark-accent {
+    background-color: var(--bg-surface);
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utility Gradients & Badges - FIXED */
+.text-gradient {
+    color: #ffffff;
+    /* Fallback warna jika browser tidak mendukung gradasi teks */
+    background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Properti standar wajib untuk validasi & kompatibilitas */
+    -webkit-text-fill-color: transparent;
+}
+
+.section-tagline {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+/* Premium Button Component */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-apple);
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.5), var(--shadow-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-premium);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+.btn-icon svg {
+    margin-left: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-icon:hover svg {
+    transform: translateX(4px);
+}
+
+/* Cursor Glow Style (Desktop Only) */
+.cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 122, 0, 0.05) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .cursor-glow {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   ADDITION: DYNAMIC TICKER BADGES ANIMATION
+   ========================================================================== */
+
+/* Kontainer utama ticker */
+.hero-badges-ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 24px auto;
+    max-width: 600px;
+    position: relative;
+    /* Efek fade/blur transparan di sisi kiri dan kanan agar badge muncul & hilang dengan halus */
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+/* Jalur track tempat badge berjalan */
+.badge-track {
+    display: inline-flex;
+    gap: 16px;
+    /* Menjalankan animasi bernama 'tickerLoop' selama 25 detik secara konstan tanpa henti */
+    animation: tickerLoop 25s linear infinite;
+}
+
+/* Styling box untuk setiap item badge */
+.ticker-badge {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-premium);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Kembalikan ke basic di css/global_2.css jika sempat diubah */
+@keyframes tickerLoop {
+    0% { 
+        transform: translate3d(0, 0, 0); 
+    }
+    100% { 
+        transform: translate3d(-50%, 0, 0); 
+    }
+}

@@ -1,0 +1,311 @@
+/* ==========================================================================
+   PRODUCTION READY RESPONSIVE SYSTEM (FINAL PRODUCTION LOCK)
+   ========================================================================== */
+
+/* TABLET AND SMALL LAPTOP BREAKPOINT */
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 20px;
+    }
+
+    .services-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* MOBILE PHONE BREAKPOINT (STRICT LAYOUT LOCK) */
+@media (max-width: 768px) {
+    
+    /* 1. KUNCI TOTAL VIEWPORT GLOBAL */
+    html, body {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Memaksa semua elemen menghitung padding di dalam ukuran lebar (mencegah tombol melar) */
+    *, *::before, *::after {
+        box-sizing: border-box !important;
+    }
+
+    /* 2. NAVBAR NAVIGATION SYSTEM LOCK */
+    .navbar {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+    }
+
+    .navbar .container {
+        padding: 0 16px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .btn-desktop-nav {
+        display: none !important; /* Hilangkan tombol desktop cta di mobile nav bar */
+    }
+
+    /* Hamburger Menu Premium Drawer Open/Close Mechanics */
+    .hamburger-btn {
+        display: flex !important;
+    }
+
+    .navbar-menu {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background-color: var(--bg-premium) !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 24px !important;
+        padding: 40px !important;
+        transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        z-index: 1050 !important;
+    }
+
+    .navbar-menu.open {
+        right: 0 !important;
+    }
+
+    .menu-link {
+        font-size: 1.25rem !important;
+        font-family: var(--font-heading) !important;
+    }
+
+    .mobile-cta-wrapper {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    .mobile-cta-wrapper .btn {
+        width: 100% !important;
+    }
+
+    .hamburger-btn.open span:nth-child(1) { transform: translateY(8px) rotate(45deg) !important; }
+    .hamburger-btn.open span:nth-child(2) { opacity: 0 !important; }
+    .hamburger-btn.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg) !important; }
+
+    /* 3. HERO CONTAINER & CONTENT STUCTURAL FIX */
+    .hero-section {
+        padding: 100px 0 60px 0 !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    .hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        display: block !important; /* Matikan grid/flex desktop */
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Typography Responsive Adjustments */
+    .hero-title {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 8px !important;
+        margin-bottom: 32px !important;
+        box-sizing: border-box !important;
+    }
+
+    .section-title {
+        font-size: 1.85rem !important;
+    }
+
+    /* 4. TOTAL FIX: HERO ACTION BUTTONS CONTAINER */
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important; /* Susun ke bawah */
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 12px !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Mengunci tombol agar patuh pada lebar pembungkus (100% internal) */
+    .hero-actions .btn {
+        width: 100% !important;
+        min-width: 0 !important; /* Mematikan min-width 200px dari global.css */
+        max-width: 100% !important;
+        height: 52px !important;
+        padding: 0 16px !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        border-radius: var(--radius-sm) !important;
+        
+        /* Memperbaiki teks transparan akibat clip-gradient */
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: initial !important;
+    }
+
+    .hero-actions .btn-primary {
+        background: var(--primary-gradient) !important;
+        color: #ffffff !important;
+    }
+
+    .hero-actions .btn-outline {
+        background: transparent !important;
+        border: 1px solid var(--border-premium) !important;
+        color: var(--text-main) !important;
+    }
+
+    /* 5. TICKER MARQUEE BADGES ANTI-BREAKOUT SYSTEM */
+    .hero-badges-ticker {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important; /* Memotong konten luar agar tidak memicu scroll-X */
+        box-sizing: border-box !important;
+        margin: 24px 0 !important;
+        padding: 0 !important;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+
+    .badge-track {
+        display: inline-flex !important;
+        gap: 12px !important;
+        white-space: nowrap !important;
+    }
+
+    .ticker-badge {
+        font-size: 0.8rem !important;
+        padding: 6px 14px !important;
+    }
+
+    /* 6. OTHER GRID COMPONENTS COMPACT STACK */
+    .stats-grid,
+    .services-grid,
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .stat-card { padding: 24px; }
+    .service-card { padding: 32px; }
+    .cta-glass-card { padding: 48px 24px; }
+    .card-1 { left: -10px; top: 10%; }
+    .card-2 { right: -10px; bottom: -10px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .floating-whatsapp { width: 52px; height: 52px; bottom: 24px; right: 24px; }
+    .back-to-top { width: 40px; height: 40px; bottom: 24px; left: 24px; }
+
+    /* ANIMASI AKURAT HAMBURGER MENJADI X DI MOBILE (COMMON UTILITY) */
+    .hamburger-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 24px !important;
+        height: 18px !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        z-index: 1100 !important;
+    }
+
+    .hamburger-btn span {
+        width: 100% !important;
+        height: 2px !important;
+        background-color: var(--text-main) !important;
+        transition: transform 0.3s ease, opacity 0.3s ease !important;
+        transform-origin: center !important;
+    }
+
+    /* Efek Berubah Menjadi X */
+    .hamburger-btn.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg) !important;
+    }
+
+    .hamburger-btn.open span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    .hamburger-btn.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg) !important;
+    }
+}

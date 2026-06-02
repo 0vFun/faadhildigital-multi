@@ -1,0 +1,23 @@
+# ==========================================================================
+# ROBOTS.TXT FOR FAADHIL DIGITAL (PREMIUM AGENCY CONFIGURATION)
+# ==========================================================================
+
+User-agent: *
+
+# Izinkan perayapan ke seluruh halaman inti website
+Allow: /
+Allow: /index.html
+Allow: /pricing.html
+Allow: /portfolio.html
+Allow: /blog.html
+Allow: /faq.html
+Allow: /contact.html
+
+# Larang bot mengakses file arsitektur internal & konfigurasi (Menghemat Crawl Budget)
+Disallow: /css/
+Disallow: /js/
+Disallow: /manifest.json
+Disallow: /sw.js
+
+# Daftarkan jalur Sitemap resmi untuk mempercepat indeksasi halaman baru oleh Google & Bing
+Sitemap: https://faadhildigital.com/sitemap.xml

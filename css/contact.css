@@ -1,0 +1,263 @@
+/* ==========================================================================
+   CONTACT PAGE STYLESHEET (css/contact.css)
+   Premium Minimalist Apple/Stripe Style - Faadhil Digital
+   ========================================================================== */
+
+/* Contact Hero Block */
+.contact-hero {
+    position: relative;
+    padding-top: calc(var(--nav-height, 80px) + 4rem);
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+.contact-hero-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: CONTACT INFO CLUSTER
+   ========================================================================== */
+.info-cluster-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.info-cluster-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light, #ffffff);
+    margin-bottom: 0.75rem;
+}
+
+.info-cluster-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* Interactive Info Links */
+.info-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-item-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.info-item-link:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: translateX(4px);
+}
+
+.info-icon-box {
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.info-item-link:hover .info-icon-box {
+    background: var(--primary-color, #a855f7);
+}
+
+.info-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted, #94a3b8);
+    margin: 0 0 0.15rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-detail-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-light, #ffffff);
+    margin: 0;
+}
+
+/* Opening Hours Widget Inside Contact Info */
+.info-hours-box {
+    background: rgba(168, 85, 247, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.hours-box-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light, #ffffff);
+    margin: 0 0 1rem 0;
+}
+
+.hours-list-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted, #94a3b8);
+}
+
+.hours-list-details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 0.5rem;
+}
+
+.hours-list-details li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hours-list-details strong {
+    color: var(--text-light, #ffffff);
+}
+
+.badge-off {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    padding: 0.15rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: GLASSMORPHISM PREMIUM FORM
+   ========================================================================== */
+.contact-glass-form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 3rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-block-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light, #ffffff);
+    margin: 0 0 2rem 0; /* Ganti tanda minus (-) jadi titik dua (:) */
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-field-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted, #94a3b8);
+}
+
+/* Premium Inputs UI */
+.form-theme-input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-theme-input:focus {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary-color, #a855f7);
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+}
+
+/* Custom Dropdown Option Styling */
+.select-theme {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+}
+
+.select-theme option {
+    background: #0d0d11; /* Mencegah warna putih silau pada option drop-down */
+    color: #ffffff;
+}
+
+.textarea-theme {
+    resize: none;
+}
+
+.btn-full-width {
+    width: 100%;
+    justify-content: center;
+    padding: 1.125rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}

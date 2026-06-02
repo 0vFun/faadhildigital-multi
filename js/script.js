@@ -1,402 +1,88 @@
-/**
- * ══════════════════════════════════════════════════════════════════
- * FAADHIL DIGITAL — CORE ENGINE JS (PREMIUM ARCHITECTURE)
- * Features: Apple Scroll Engine, Reactive Counters, PWA Intercept,
- * Multi-Language Matrix, Accordion Fluidity, & Theme Switcher.
- * ══════════════════════════════════════════════════════════════════
- */
+// MAIN UTILITIRES & PREMIUM USER EXPERIENCE INTERACTION ORCHESTRATOR
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Control for Premium Loading Screen
+    const loaderScreen = document.getElementById('loaderScreen');
+    
+    // Gunakan event 'load' global window agar loader menutup tepat saat gambar/asset selesai dirender
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            if (loaderScreen) {
+                loaderScreen.style.opacity = '0';
+                loaderScreen.style.visibility = 'hidden';
+                
+                // Triger trigger awal untuk section Hero agar langsung teranimasi tanpa menunggu scroll
+                const heroReveal = document.querySelector('#hero .reveal-fade-up');
+                if (heroReveal) heroReveal.classList.add('active');
+            }
+        }, 400); // Penundaan visual singkat 400ms untuk transisi yang elegan
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
-  initLoader();
-  initNavbar();
-  initTheme();
-  initCursorGlow();
-  initScrollReveal();
-  initCounters();
-  initBackToTop();
-  initMobileMenu();
-  initLanguageToggle();
-  initAccordion();
-  initPortfolioFilter();
-  initBlogSearch();
-  initContactForm();
-  initPWA();
+    // 2. Cursor Glow Effect Layout (Desktop Tracker)
+    const cursorGlow = document.getElementById('cursorGlow');
+    
+    if (cursorGlow && window.innerWidth >= 1024) {
+        window.addEventListener('mousemove', (e) => {
+            // Menggunakan requestAnimationFrame internal browser untuk tracking posisi kursor super smooth
+            requestAnimationFrame(() => {
+                cursorGlow.style.left = `${e.clientX}px`;
+                cursorGlow.style.top = `${e.clientY}px`;
+            });
+        });
+    }
 
-  // Inisialisasi Modul Khusus Halaman Blog (Jika diperlukan tambahan masa depan)
-  if (document.getElementById('blogGrid') || document.getElementById('blogSearch')) {
-    initBlogPageEngine();
-  }
+    // 3. Back to Top Button Control Logic
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // 4. Toast Notification Trigger Ready (For Future conversion leaks)
+    window.showToast = (message) => {
+        const toast = document.createElement('div');
+        toast.style.position = 'fixed';
+        toast.style.bottom = '32px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.background = 'rgba(11, 11, 15, 0.9)';
+        toast.style.border = '1px solid var(--primary)';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = '8px';
+        toast.style.color = '#fff';
+        toast.style.fontSize = '0.9rem';
+        toast.style.zIndex = '9999';
+        toast.style.backdropFilter = 'blur(8px)';
+        toast.style.boxShadow = 'var(--shadow-md)';
+        toast.innerText = message;
+        
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    };
 });
 
-/* ─── EXTRA UTILITY: TOAST DISPATCHER ─── */
-function showToast(message) {
-  let toast = document.getElementById("toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "toast";
-    toast.className = "toast";
-    document.body.appendChild(toast);
-  }
-  toast.textContent = message;
-  toast.classList.add("show");
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 4000);
-}
-
-/* ─── PREMIUM LOADER CONTROL (WITH AUTOMATIC SAFETY) ─── */
-function initLoader() {
-  const loader = document.getElementById("loader");
-  if (!loader) return;
-
-  // Skenario 1: Hilangkan loader setelah seluruh halaman selesai dimuat sempurna
-  window.addEventListener("load", () => {
-    loader.classList.add("fade-out");
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 600);
-  });
-
-  // Skenario 2 (Safety Guard): Paksa tutup dalam 3 detik agar layar tidak blank hitam jika ada aset macet
-  setTimeout(() => {
-    if (!loader.classList.contains("fade-out")) {
-      loader.classList.add("fade-out");
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 600);
-    }
-  }, 3000);
-}
-
-/* ─── NAVBAR SCROLL MECHANISM ─── */
-function initNavbar() {
-  const nav = document.querySelector(".navbar");
-  if (!nav) return;
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
-}
-
-/* ─── THEME ENGINE (DARK / LIGHT MODE MATRIX) ─── */
-function initTheme() {
-  const themeToggle = document.getElementById("themeToggle");
-  const htmlElement = document.documentElement;
-  const themeIcon = document.getElementById("themeIcon") || themeToggle;
-  
-  if (!themeToggle) return;
-
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  htmlElement.setAttribute("data-theme", savedTheme);
-  if (themeIcon) themeIcon.textContent = savedTheme === "dark" ? "🌙" : "☀️";
-
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = htmlElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    
-    htmlElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (themeIcon) themeIcon.textContent = newTheme === "dark" ? "🌙" : "☀️";
-  });
-}
-
-/* ─── CURSOR GLOW INTERACTION ─── */
-function initCursorGlow() {
-  const glow = document.getElementById("cursorGlow");
-  if (!glow) return;
-  window.addEventListener("mousemove", (e) => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-  });
-}
-
-/* ─── APPLE SCROLL REVEAL ENGINE ─── */
-function initScrollReveal() {
-  const reveals = document.querySelectorAll(".reveal, .sr");
-  if (!reveals.length) return;
-
-  const checkReveal = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < triggerBottom) {
-        el.classList.add("active");
-        el.classList.add("visible"); // Dukungan fallback skrip .sr blog lama
-      }
+// Registrasi Service Worker PWA Faadhil Digital
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+                console.log('Faadhil Digital SW registered successfully with scope: ', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Faadhil Digital SW registration failed: ', error);
+            });
     });
-  };
-
-  window.addEventListener("scroll", checkReveal);
-  checkReveal();
-}
-
-/* ─── REACTIVE COUNTERS INTERACTION ─── */
-function initCounters() {
-  const counters = document.querySelectorAll(".counter-value");
-  if (!counters.length) return;
-
-  const startCounter = (el) => {
-    const target = parseInt(el.getAttribute("data-target")) || 0;
-    if (target === 0) {
-      el.textContent = 0;
-      return;
-    }
-
-    let current = 0;
-    const duration = 2000;
-    const stepTime = Math.max(Math.floor(duration / target), 15);
-    
-    const timer = setInterval(() => {
-      current += Math.ceil(target / 50);
-      if (current >= target) {
-        el.textContent = target;
-        clearInterval(timer);
-      } else {
-        el.textContent = current;
-      }
-    }, stepTime);
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(c => observer.observe(c));
-}
-
-/* ─── BACK TO TOP CONTROL ─── */
-function initBackToTop() {
-  const btn = document.getElementById("backToTop") || document.getElementById("backTop");
-  if (!btn) return;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      btn.classList.add("show");
-    } else {
-      btn.classList.remove("show");
-    }
-  });
-
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-/* ─── MOBILE MENU TOGGLE ─── */
-function initMobileMenu() {
-  const menuToggle = document.getElementById("menuToggle"); // -> Sekarang aman, COCOK dengan id="menuToggle" di HTML baru!
-  const mobileMenu = document.getElementById("mobileMenu"); // -> COCOK dengan id="mobileMenu" di HTML
-
-  if (!menuToggle || !mobileMenu) return;
-
-  // Handler 1: Buka/Tutup Menu saat tombol Hamburger diklik
-  menuToggle.addEventListener("click", () => {
-    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", !isExpanded);
-    mobileMenu.setAttribute("aria-hidden", isExpanded);
-    
-    menuToggle.classList.toggle("active"); // -> Memicu animasi CSS Hamburger jadi (X)
-    mobileMenu.classList.toggle("open");   // -> Memicu animasi CSS Menu bergeser turun
-  });
-
-  // Handler 2: Tutup menu otomatis jika salah satu link di dalam menu mobile diklik
-  const links = mobileMenu.querySelectorAll("a");
-  links.forEach(l => {
-    l.addEventListener("click", () => {
-      menuToggle.setAttribute("aria-expanded", "false");
-      mobileMenu.setAttribute("aria-hidden", "true");
-      menuToggle.classList.remove("active");
-      mobileMenu.classList.remove("open");
-    });
-  });
-}
-
-/* ─── MULTI-LANGUAGE DICTIONARY MATRIX ─── */
-const dictionary = {
-  id: {
-    "toast-form": "Pesan Anda berhasil terkirim!",
-    "no-results": "Artikel tidak ditemukan..."
-  },
-  en: {
-    "toast-form": "Your project message has been sent successfully!",
-    "no-results": "No articles match your search..."
-  }
-};
-
-function initLanguageToggle() {
-  const langToggle = document.getElementById("langToggle");
-  if (!langToggle) return;
-
-  if (!localStorage.getItem("preferred-lang")) {
-    localStorage.setItem("preferred-lang", "id");
-  }
-
-  langToggle.addEventListener("click", () => {
-    const current = localStorage.getItem("preferred-lang");
-    const nextLang = current === "id" ? "en" : "id";
-    localStorage.setItem("preferred-lang", nextLang);
-    langToggle.textContent = nextLang.toUpperCase();
-    showToast(`Language switched to: ${nextLang.toUpperCase()}`);
-  });
-}
-
-/* ─── ACCORDION FLUIDITY ─── */
-function initAccordion() {
-  const faqHeaders = document.querySelectorAll(".faq-header");
-  const faqCards = document.querySelectorAll(".faq-card");
-
-  if (faqCards.length && faqCards[0].tagName === "DETAILS") {
-    faqCards.forEach(card => {
-      card.addEventListener("toggle", () => {
-        const icon = card.querySelector(".faq-icon");
-        if (card.open) {
-          card.style.borderColor = "var(--brand-primary)";
-          if (icon) icon.style.transform = "rotate(45deg)";
-        } else {
-          card.style.borderColor = "var(--border-light)";
-          if (icon) icon.style.transform = "rotate(0deg)";
-        }
-      });
-    });
-    return;
-  }
-
-  faqHeaders.forEach(header => {
-    header.addEventListener("click", () => {
-      const item = header.parentElement;
-      const content = item.querySelector(".faq-content");
-      const isExpanded = header.getAttribute("aria-expanded") === "true";
-
-      header.setAttribute("aria-expanded", !isExpanded);
-      item.classList.toggle("active");
-
-      if (item.classList.contains("active") && content) {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else if (content) {
-        content.style.maxHeight = null;
-      }
-    });
-  });
-}
-
-/* ─── INTERACTIVE PORTFOLIO FILTER ─── */
-function initPortfolioFilter() {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const portfolioItems = document.querySelectorAll(".portfolio-item");
-  if (!filterButtons.length || !portfolioItems.length) return;
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const targetFilter = btn.getAttribute("data-filter");
-
-      portfolioItems.forEach(item => {
-        const itemCategory = item.getAttribute("data-category");
-        if (targetFilter === "all" || itemCategory === targetFilter) {
-          item.style.display = "block";
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, 10);
-        } else {
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.95)";
-          setTimeout(() => { item.style.display = "none"; }, 250);
-        }
-      });
-    });
-  });
-}
-
-/* ─── LIVE SEARCH BLOG ENGINE ─── */
-function initBlogSearch() {
-  const searchInput = document.getElementById("blogSearchInput");
-  const blogContainer = document.getElementById("blogItemsContainer");
-  const noResultsAlert = document.getElementById("noBlogResults");
-  
-  if (!searchInput || !blogContainer) return;
-
-  const blogCards = blogContainer.getElementsByClassName("blog-post-card");
-
-  searchInput.addEventListener("input", (e) => {
-    const filterValue = e.target.value.toLowerCase().trim();
-    let hasResult = false;
-
-    Array.from(blogCards).forEach(card => {
-      const titleData = card.getAttribute("data-title") || "";
-      if (titleData.toLowerCase().includes(filterValue)) {
-        card.style.display = "";
-        hasResult = true;
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    if (noResultsAlert) {
-      const currentLang = localStorage.getItem("preferred-lang") || "id";
-      noResultsAlert.textContent = dictionary[currentLang]["no-results"];
-      noResultsAlert.style.display = hasResult ? "none" : "block";
-    }
-  });
-}
-
-/* ─── PREMIUM CONTACT FORM SYSTEM ─── */
-function initContactForm() {
-  const contactForm = document.getElementById("contactForm");
-  if (!contactForm) return;
-
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById("formName")?.value;
-    const email = document.getElementById("formEmail")?.value;
-    const message = document.getElementById("formMessage")?.value;
-    
-    if (!name || !email || !message) {
-      showToast("Harap isi semua field formulir!");
-      return;
-    }
-
-    const submitBtn = contactForm.querySelector("button[type='submit']");
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = "<span>Sending Project...</span>";
-
-      setTimeout(() => {
-        const currentLang = localStorage.getItem("preferred-lang") || "id";
-        showToast(dictionary[currentLang]["toast-form"]);
-        contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }, 1500);
-    }
-  });
-}
-
-/* ─── PWA DISPATCH LAYER ─── */
-function initPWA() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/sw.js")
-        .then(reg => console.log("Faadhil Digital PWA Active:", reg.scope))
-        .catch(err => console.error("PWA Register Error:", err));
-    });
-  }
-}
-
-/* ─── FALLBACK DUMMY UNTUK BLOG ENGINE ─── */
-function initBlogPageEngine() {
-  console.log("Blog Page Engine modules initialized.");
-  // Tulis logika tambahan khusus halaman blog Anda di sini jika ada.
 }

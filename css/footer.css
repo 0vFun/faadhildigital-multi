@@ -1,0 +1,124 @@
+/* LUXURY BLACK AGENCY FOOTER */
+.footer-premium {
+    background-color: #010102;
+    border-top: 1px solid var(--border-premium);
+    padding: 80px 0 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand .footer-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-since {
+    font-size: 0.8rem;
+    color: var(--primary);
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.footer-links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-group a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-links-group a:hover {
+    color: var(--primary);
+    transform: translateX(2px);
+}
+
+.contact-info-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-premium);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Floating Actions Styling Core */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+    z-index: 999;
+    transition: var(--transition-apple);
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-premium);
+    color: var(--text-main);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    opacity: 0; /* Dikendalikan JS via scroll */
+    visibility: hidden;
+    z-index: 999;
+    transition: var(--transition-smooth);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}

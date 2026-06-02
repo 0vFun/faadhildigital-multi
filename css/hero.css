@@ -1,0 +1,215 @@
+/* HERO SECTION WITH STARTUP SAAS GLOW */
+.hero-section {
+    padding-top: 180px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Background Ambient Lighting Effect */
+.hero-glow-1 {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 122, 0, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.hero-glow-2 {
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 81, 0, 0.05) 0%, transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Visual Device Mockup & Floating Cards */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.mockup-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.mockup-browser {
+    background: #16161e;
+    border: 1px solid var(--border-premium);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    width: 100%;
+}
+
+.browser-header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-premium);
+}
+
+.browser-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff5f56;
+}
+.browser-header .dot:nth-child(2) { background: #ffbd2e; }
+.browser-header .dot:nth-child(3) { background: #27c93f; }
+
+.browser-url {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 12px;
+    flex-grow: 0.5;
+    text-align: center;
+}
+
+.browser-body {
+    padding: 24px;
+    height: 240px;
+    background: var(--bg-premium);
+}
+
+/* Layout isi mockup */
+.dummy-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.dummy-hero-line {
+    height: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    width: 70%;
+}
+.dummy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.dummy-card {
+    height: 80px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-premium);
+    border-radius: 6px;
+}
+
+/* Floating Cards Layout (Framer/Stripe Style) */
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-premium);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+}
+
+.card-1 {
+    top: 20%;
+    left: -40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-pulse {
+    width: 12px;
+    height: 12px;
+    background: #00ff66;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #00ff66;
+}
+
+.floating-card h4 { font-size: 0.85rem; font-weight: 600; }
+.floating-card p { font-size: 0.75rem; color: var(--text-muted); }
+
+.card-2 {
+    bottom: -20px;
+    right: -20px;
+}
+
+/* Scroll Down Indicator Animation Mouse */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.mouse-wheel {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--text-muted);
+    border-radius: 12px;
+    position: relative;
+}
+
+.mouse-wheel::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollMouse 2s infinite;
+}
+
+@keyframes scrollMouse {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 15px); }
+}

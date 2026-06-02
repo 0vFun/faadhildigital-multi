@@ -1,0 +1,37 @@
+/* DESIGN SYSTEM VARIABLES */
+:root {
+    /* Colors */
+    --bg-premium: #030305;
+    --bg-surface: #0b0b0f;
+    --bg-surface-accent: #12121a;
+    
+    --primary: #ff7a00;
+    --primary-glow: rgba(255, 122, 0, 0.15);
+    --primary-gradient: linear-gradient(135deg, #ff7a00 0%, #ff5100 100%);
+    
+    --text-main: #f5f5f7;
+    --text-muted: #86868b;
+    --text-dark: #000000;
+    
+    --border-premium: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 122, 0, 0.3);
+    
+    --glass-bg: rgba(11, 11, 15, 0.7);
+    --glass-blur: saturate(180%) blur(20px);
+    
+    /* Typography */
+    --font-global: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    
+    /* Shadows & Radii */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.7);
+    --shadow-glow: 0 0 40px rgba(255, 122, 0, 0.15);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    /* Animations */
+    --transition-apple: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-smooth: all 0.3s ease;
+}

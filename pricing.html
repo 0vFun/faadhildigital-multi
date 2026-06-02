@@ -1,307 +1,316 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Harga Jasa Pembuatan Website Premium - Faadhil Digital</title>
+    <meta name="description"
+        content="Pilihan investasi paket website dan landing page sesuai skala bisnis Anda. Mulai dari Rp200rb dengan kualitas desain premium modern, SEO lengkap, dan cepat.">
+    <meta name="theme-color" content="#030305">
 
-  <title>Paket Harga Jasa Pembuatan Website | Faadhil Digital</title>
-  <meta name="description" content="Pilih paket harga jasa pembuatan website yang sesuai dengan kebutuhan bisnis Anda. Harga transparan mulai Rp 200.000, tanpa biaya tersembunyi."/>
-  <meta name="keywords" content="harga jasa website, paket website murah, jasa website umkm, biaya bikin website, Faadhil Digital"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="author" content="Faadhil Digital"/>
-  <link rel="canonical" href="https://faadhildigital.com/pricing.html"/>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Paket Harga Jasa Website Transparan — Faadhil Digital"/>
-  <meta property="og:description" content="Mulai dari Rp 200.000, miliki website premium, mobile-friendly, dan cepat. Tanpa biaya tersembunyi."/>
-  <meta property="og:url" content="https://faadhildigital.com/pricing.html"/>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://faadhildigital.com/pricing.html">
+    <meta property="og:title" content="Pilihan Paket Investasi Website - Faadhil Digital">
+    <meta property="og:description"
+        content="Skema harga transparan dengan standar desain Apple & Framer vibe. Temukan paket terbaik untuk bisnis Anda.">
+    <meta property="og:image" content="assets/images/og-pricing.jpg">
 
-  <meta name="theme-color" content="#030305"/>
-  <link rel="icon" type="image/png" href="LOGO4721.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
+
 <body>
 
-  <!-- LOADER -->
-  <div id="loader" class="loader" role="status" aria-label="Loading">
-    <div class="loader-logo">
-      <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="48" height="48"/>
-      <span>Faadhil<strong>Digital</strong></span>
+    <div class="loader-screen" id="loaderScreen">
+        <div class="loader-content">
+            <span class="loader-logo">Faadhil Digital</span>
+            <div class="loader-bar"></div>
+        </div>
     </div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
 
-  <header class="navbar" id="navbar" role="banner">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo" aria-label="Faadhil Digital - Beranda">
-        <img src="assets/LOGO4721.png" alt="Logo Faadhil Digital" width="32" height="32" loading="eager"/>
-        <span>Faadhil<strong>Digital</strong></span>
-      </a>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu utama">
-        <a href="index.html" class="nav-a">Home</a>
-        <a href="pricing.html" class="nav-a active">Pricing</a>
-        <a href="portfolio.html" class="nav-a">Portfolio</a>
-        <a href="blog.html" class="nav-a">Blog</a>
-        <a href="faq.html" class="nav-a">FAQ</a>
-        <a href="contact.html" class="nav-a">Contact</a>
-      </nav>
-
-      <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Ubah mode tema">
-          <!-- Icon Bulan (Dark) / Matahari (Light) -->
-          <span class="theme-icon">🌙</span>
-        </button>
-        <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" class="nav-cta">
-          <span>Konsultasi</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu navigasi" hidden>
-    <nav aria-label="Menu mobile">
-      <a href="home.html" class="mob-a">Home</a>
-      <a href="pricing.html" class="mob-a active">Pricing</a>
-      <a href="portfolio.html" class="mob-a">Portfolio</a>
-      <a href="blog.html" class="mob-a">Blog</a>
-      <a href="faq.html" class="mob-a">FAQ</a>
-      <a href="contact.html" class="mob-a">Contact</a>
-    </nav>
-  </div>
-
-  <main id="main">
-    <!-- ═══ PRICING HERO & CARDS ═══ -->
-    <section class="section">
-      <div class="con">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 64px;">
-          <div class="sec-badge" data-translate="badge_pricing">Harga Transparan</div>
-          
-          <h1 class="sec-title" style="font-size: 44px; margin-bottom: 16px;">
-            <span data-translate="hero_title_1">Investasi Jujur untuk</span><br/>
-            <span class="hh-gradient" data-translate="hero_title_2">Pertumbuhan Bisnis Anda</span>
-          </h1>
-          <p class="sec-sub" data-translate="hero_sub">
-            Pilih paket yang paling sesuai dengan skala kebutuhan Anda saat ini. Semua biaya tertera di depan, tanpa ada biaya tersembunyi.
-          </p>
+    <header class="navbar-header" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo-wrapper" aria-label="Faadhil Digital Home">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="navbar-logo-img">
+            </a>
+            <nav class="navbar-menu" id="navbarMenu">
+                <a href="index.html" class="menu-link" data-translate="nav-home">Home</a>
+                <a href="pricing.html" class="menu-link active" data-translate="nav-pricing">Pricing</a>
+                <a href="portfolio.html" class="menu-link" data-translate="nav-portfolio">Portfolio</a>
+                <a href="blog.html" class="menu-link" data-translate="nav-blog">Blog</a>
+                <a href="faq.html" class="menu-link" data-translate="nav-faq">FAQ</a>
+                <a href="contact.html" class="menu-link" data-translate="nav-contact">Contact</a>
+                <div class="mobile-cta-wrapper">
+                    <a href="https://wa.me/6282317304798" target="_blank" rel="noopener" class="btn btn-primary"
+                        data-translate="cta-nav">Konsultasi Gratis</a>
+                </div>
+            </nav>
+            <div class="navbar-actions">
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">ID</button>
+                <a href="https://wa.me/6282317304798" target="_blank" rel="noopener"
+                    class="btn btn-primary btn-desktop-nav" data-translate="cta-nav">Konsultasi Gratis</a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
+    </header>
 
-        <!-- GRID KARTU HARGA (Menggunakan CSS Global) -->
-        <div class="price-preview-grid">
-          <!-- Basic -->
-          <article class="ppkg">
-            <div class="ppkg-tier">Basic</div>
-            <div class="ppkg-price">Rp<strong style="display: inline-block; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; background-image: linear-gradient(180deg, #fff 40%, var(--text-muted) 100%);">200.000</strong></div>
-            <p class="ppkg-ideal">Cocok untuk landing page produk tunggal, portofolio pribadi, atau warung digital.</p>
-            <ul class="ppkg-list" aria-label="Fitur paket basic">
-              <li>1 Halaman Utama (Single Page)</li>
-              <li>Desain Mobile Responsive</li>
-              <li>Integrasi Langsung Chat WhatsApp</li>
-              <li>Optimalisasi SEO Dasar</li>
-              <li>3× Revisi Minor</li>
-            </ul>
-            <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Basic" target="_blank" rel="noopener noreferrer" class="ppkg-btn">Pilih Paket Basic</a>
-          </article>
+    <main style="padding-top: 140px;">
+        <section class="pricing-hero section-padding">
+            <div class="container text-center reveal-fade-up">
+                <span class="section-tagline">Pricing Plans</span>
+                <h1 class="section-title" data-translate="price-head-title">Investasi Transparan, Hasil Maksimal</h1>
+                <p class="section-subtitle" data-translate="price-head-sub">Pilih tingkat rencana yang dirancang khusus
+                    untuk mempercepat pertumbuhan otoritas digital bisnis Anda.</p>
 
-          <!-- Professional -->
-          <article class="ppkg ppkg-featured" aria-label="Paket paling populer">
-            <div class="ppkg-popular-badge">⭐ Paling Populer</div>
-            <div class="ppkg-tier">Professional</div>
-            <div class="ppkg-price">Rp<strong style="display: inline-block; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; background-image: linear-gradient(180deg, #fff 40%, var(--text-muted) 100%);">600.000</strong></div>
-            <p class="ppkg-ideal">Pilihan terbaik untuk Company Profile perusahaan, UKM berkembang, atau katalog produk.</p>
-            <ul class="ppkg-list" aria-label="Fitur paket professional">
-              <li>Multi-Section / Hingga 5 Halaman</li>
-              <li>Desain Premium & UI/UX Khusus Brand</li>
-              <li>Advanced SEO Setup (Mudah di Google)</li>
-              <li>Kecepatan Loading Dioptimasi</li>
-              <li>Integrasi Social Media & Maps</li>
-              <li>Unlimited Revisi (Masa pengerjaan)</li>
-            </ul>
-            <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Professional" target="_blank" rel="noopener noreferrer" class="ppkg-btn ppkg-btn-primary">Pilih Paket Professional</a>
-          </article>
+                <!-- ADDITION 1: Dynamic Badges Ticker -->
+                <div class="hero-badges-ticker">
+                    <div class="badge-track">
+                        <span class="ticker-badge">🛡️ No Hidden Fees</span>
+                        <span class="ticker-badge">💎 High Value Investment</span>
+                        <span class="ticker-badge">📈 Scale-Ready Architecture</span>
+                        <span class="ticker-badge">💬 Direct WhatsApp Support</span>
+                        <!-- Duplicate for Infinite Loop Effect -->
+                        <span class="ticker-badge">🛡️ No Hidden Fees</span>
+                        <span class="ticker-badge">💎 High Value Investment</span>
+                        <span class="ticker-badge">📈 Scale-Ready Architecture</span>
+                        <span class="ticker-badge">💬 Direct WhatsApp Support</span>
+                    </div>
+                </div>
 
-          <!-- Premium -->
-          <article class="ppkg">
-            <div class="ppkg-tier">Premium</div>
-            <div class="ppkg-price">Rp<strong style="display: inline-block; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; background-image: linear-gradient(180deg, #fff 40%, var(--text-muted) 100%);">1.200.000</strong></div>
-            <p class="ppkg-ideal">Solusi e-commerce mandiri atau sistem website custom interaktif yang kompleks.</p>
-            <ul class="ppkg-list" aria-label="Fitur paket premium">
-              <li>Halaman Tidak Terbatas (Unlimited Pages)</li>
-              <li>Integrasi Sistem Database / Firebase</li>
-              <li>Admin Dashboard (Kelola Konten & Produk)</li>
-              <li>Fitur Keranjang Belanja & Gambar</li>
-              <li>Keamanan SSL Tingkat Tinggi</li>
-              <li>Prioritas Support 30 Hari</li>
-            </ul>
-            <a href="https://wa.me/6282317304798?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Premium" target="_blank" rel="noopener noreferrer" class="ppkg-btn">Pilih Paket Premium</a>
-          </article>
+                <div class="toggle-container">
+                    <span class="toggle-label active" id="labelFixed">Fixed Cost</span>
+                    <button class="switch-toggle" id="billingToggle" aria-label="Toggle Billing Type">
+                        <span class="switch-circle"></span>
+                    </button>
+                    <span class="toggle-label" id="labelMonthly">Monthly Support</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-cards-section" style="margin-bottom: 100px;">
+            <div class="container pricing-cards-grid">
+
+                <div class="price-card reveal-fade-up">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-header-plan">
+                        <h3>Paket Basic</h3>
+                        <p data-translate="p1-sub">Cocok untuk validasi ide bisnis awal atau portofolio personal.</p>
+                        <div class="price-display">
+                            <span class="currency">Rp</span>
+                            <span class="amount">200.000</span>
+                        </div>
+                    </div>
+                    <ul class="benefit-list">
+                        <li><span class="check-icon">✓</span> 1 Landing Page</li>
+                        <li><span class="check-icon">✓</span> Responsive Mobile</li>
+                        <li><span class="check-icon">✓</span> WhatsApp Integration</li>
+                        <li><span class="check-icon">✓</span> Design Modern</li>
+                        <li><span class="check-icon">✓</span> Basic SEO</li>
+                        <li><span class="check-icon">✓</span> Free Revisi 1x</li>
+                        <li><span class="check-icon">✓</span> Fast Loading</li>
+                    </ul>
+                    <div class="card-footer-action">
+                        <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital,%20saya%20tertarik%20dengan%20Paket%20Basic%20200rb"
+                            target="_blank" rel="noopener" class="btn btn-outline btn-full-width">Pilih Paket Basic</a>
+                    </div>
+                </div>
+
+                <div class="price-card popular reveal-fade-up">
+                    <div class="card-glow-effect"></div>
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header-plan">
+                        <h3>Paket Professional</h3>
+                        <p data-translate="p2-sub">Pilihan terbaik untuk bisnis komersial, UMKM berkembang, dan
+                            korporasi.</p>
+                        <div class="price-display">
+                            <span class="currency">Rp</span>
+                            <span class="amount">600.000</span>
+                        </div>
+                    </div>
+                    <ul class="benefit-list">
+                        <li><span class="check-icon-orange">✓</span> Multi Section Website</li>
+                        <li><span class="check-icon-orange">✓</span> Premium Design (Framer Style)</li>
+                        <li><span class="check-icon-orange">✓</span> Responsive All Device</li>
+                        <li><span class="check-icon-orange">✓</span> WhatsApp Integration</li>
+                        <li><span class="check-icon-orange">✓</span> Advanced SEO Optimization</li>
+                        <li><span class="check-icon-orange">✓</span> Animasi Modern Smooth</li>
+                        <li><span class="check-icon-orange">✓</span> Free Revisi 3x</li>
+                        <li><span class="check-icon-orange">✓</span> Portfolio Section Integration</li>
+                        <li><span class="check-icon-orange">✓</span> CTA Conversion Optimization</li>
+                    </ul>
+                    <div class="card-footer-action">
+                        <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital,%20saya%20tertarik%20dengan%20Paket%20Professional%20600rb"
+                            target="_blank" rel="noopener" class="btn btn-primary btn-full-width">Pilih Paket
+                            Professional</a>
+                    </div>
+                </div>
+
+                <div class="price-card reveal-fade-up">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-header-plan">
+                        <h3>Paket Premium</h3>
+                        <p data-translate="p3-sub">Solusi terlengkap berskala enterprise dengan fungsionalitas custom
+                            penuh.</p>
+                        <div class="price-display">
+                            <span class="currency">Rp</span>
+                            <span class="amount">1.200.000</span>
+                        </div>
+                    </div>
+                    <ul class="benefit-list">
+                        <li><span class="check-icon">✓</span> Website Premium Full Custom</li>
+                        <li><span class="check-icon">✓</span> Admin Panel System</li>
+                        <li><span class="check-icon">✓</span> Firebase Database Integration</li>
+                        <li><span class="check-icon">✓</span> Cloudinary Media Storage</li>
+                        <li><span class="check-icon">✓</span> Full SEO & Meta Optimization</li>
+                        <li><span class="check-icon">✓</span> Multi Page Architecture</li>
+                        <li><span class="check-icon">✓</span> Premium Micro-Animation</li>
+                        <li><span class="check-icon">✓</span> Dynamic Blog Section</li>
+                        <li><span class="check-icon">✓</span> Advanced UI/UX (Apple Style)</li>
+                        <li><span class="check-icon">✓</span> Revisi Lebih Banyak</li>
+                        <li><span class="check-icon">✓</span> Prioritas VIP Support 24/7</li>
+                    </ul>
+                    <div class="card-footer-action">
+                        <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital,%20saya%20tertarik%20dengan%20Paket%20Premium%201,2jt"
+                            target="_blank" rel="noopener" class="btn btn-outline btn-full-width">Pilih Paket
+                            Premium</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="comparison-section section-padding bg-dark-accent">
+            <div class="container">
+                <div class="section-header text-center reveal-fade-up">
+                    <h2 class="section-title" data-translate="comp-title">Bandingkan Detail Fitur</h2>
+                    <p class="section-subtitle" data-translate="comp-sub">Membantu Anda melihat transparansi kapabilitas
+                        teknologi dari setiap paket investasi.</p>
+                </div>
+
+                <div class="comparison-table-wrapper reveal-fade-up">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;" data-translate="th-feature">Fitur & Layanan</th>
+                                <th>Basic</th>
+                                <th class="active-col">Professional</th>
+                                <th>Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-name">Jumlah Halaman/Section</td>
+                                <td>1 Page</td>
+                                <td class="active-col">Multi Section</td>
+                                <td>Multi Page (Full Custom)</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Kiblat Desain Visual</td>
+                                <td>Clean Modern</td>
+                                <td class="active-col">Premium Framer Style</td>
+                                <td>Luxury Apple / Stripe Style</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Integrasi Sistem Database</td>
+                                <td>—</td>
+                                <td class="active-col">—</td>
+                                <td>Firebase & Cloudinary Ready</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Optimasi Struktur SEO</td>
+                                <td>Dasar</td>
+                                <td class="active-col">Lanjutan (Advanced)</td>
+                                <td>Maksimal (Full Schema Data)</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Batas Garansi Revisi</td>
+                                <td>1x Revisi</td>
+                                <td class="active-col">3x Revisi</td>
+                                <td>Prioritas Fleksibel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-conversion-section section-padding">
+            <div class="container">
+                <div class="cta-glass-card reveal-fade-up">
+                    <div class="cta-card-glow"></div>
+                    <h2 class="cta-headline">Punya Kebutuhan Spesifik Diluar Paket?</h2>
+                    <p class="cta-subheadline">Jangan ragu. Kami dapat membangun arsitektur website fungsional skala
+                        besar yang disesuaikan penuh dengan workflow internal bisnis Anda.</p>
+                    <a href="https://wa.me/6282317304798?text=Halo%20Faadhil%20Digital,%20saya%20ingin%20konsultasi%20custom%20project"
+                        target="_blank" rel="noopener" class="btn btn-primary btn-large">
+                        <span>Konsultasi Proyek Custom</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-premium">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/logo/LOGO4721.png" alt="Logo Faadhil Digital" class="footer-logo-img">
+                <p class="footer-tagline" style="margin-top: 1rem;">Build Your Digital Presence</p>
+                <p class="footer-since">Since 2026</p>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Navigasi</h4>
+                <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Eksplorasi</h4>
+                <a href="blog.html">Blog</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links-group">
+                <h4 class="footer-heading">Kontak</h4>
+                <p class="contact-info-text">WA: 0823-1730-4798</p>
+                <p class="contact-info-text">Email: ahmadfaadhil854@gmail.com</p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ═══ DETAIL PERBANDINGAN FITUR (TABEL PREMIUM) ═══ -->
-    <section class="section sec-alt">
-      <div class="con">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
-          <h2 class="sec-title" style="font-size: 32px;">Bandingkan <span class="hh-gradient">Fitur Detail</span></h2>
-          <p class="sec-sub">Supaya Anda tidak salah pilih, berikut komparasi lengkap antar spesifikasi paket.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Faadhil Digital. All Rights Reserved.</p>
         </div>
+    </footer>
 
-        <div style="overflow-x: auto; background: #0a0a0f; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-          <table style="width: 100%; border-collapse: collapse; text-align: left; color: #fff; min-width: 650px; font-size: 14px;">
-            <thead>
-              <tr style="border-bottom: 2px solid rgba(255,255,255,0.08); height: 50px;">
-                <th style="padding: 12px; font-weight: 700; font-size: 15px;">Fitur / Spesifikasi</th>
-                <th style="padding: 12px; color: #8e8e93; font-weight: 600;">Basic</th>
-                <th style="padding: 12px; color: #ff9533; font-weight: 600;">Professional</th>
-                <th style="padding: 12px; color: var(--brand-primary); font-weight: 600;">Premium</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Jumlah Halaman</td>
-                <td style="padding: 18px 12px; color: #8e8e93;">1 Halaman</td>
-                <td style="padding: 18px 12px; color: #fff;">Hingga 5 Halaman</td>
-                <td style="padding: 18px 12px; color: #fff;">Tidak Terbatas</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Jenis Desain</td>
-                <td style="padding: 18px 12px; color: #8e8e93;">Clean & Minimalis</td>
-                <td style="padding: 18px 12px; color: #fff;">Premium & Custom UI</td>
-                <td style="padding: 18px 12px; color: #fff;">Eksklusif Animation</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Optimasi Google (SEO)</td>
-                <td style="padding: 18px 12px; color: #8e8e93;">Standar Meta Tag</td>
-                <td style="padding: 18px 12px; color: #fff;">Advanced Schema</td>
-                <td style="padding: 18px 12px; color: #fff;">Full SEO Ready</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Batas Revisi</td>
-                <td style="padding: 18px 12px; color: #8e8e93;">3 Kali</td>
-                <td style="padding: 18px 12px; color: #fff;">Sepuasnya (Pre-live)</td>
-                <td style="padding: 18px 12px; color: #fff;">Sepuasnya + Pasca-Online</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Dashboard Admin</td>
-                <td style="padding: 18px 12px; color: #ef4444; font-weight: 600;">✗ Tidak Ada</td>
-                <td style="padding: 18px 12px; color: #ef4444; font-weight: 600;">✗ Tidak Ada</td>
-                <td style="padding: 18px 12px; color: #10b981; font-weight: 600;">✓ Tersedia (Firebase)</td>
-              </tr>
-              <tr>
-                <td style="padding: 18px 12px; font-weight: 600; color: #fff;">Garansi Error</td>
-                <td style="padding: 18px 12px; color: #8e8e93;">7 Hari</td>
-                <td style="padding: 18px 12px; color: #fff;">14 Hari</td>
-                <td style="padding: 18px 12px; color: #fff;">30 Hari</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+    <a href="https://wa.me/6282317304798" class="floating-whatsapp" target="_blank" rel="noopener"
+        aria-label="Chat WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.053 1.048 11.43 1.048c-5.44 0-9.866 4.374-9.87 9.802-.001 1.73.463 3.42 1.345 4.927l-.997 3.641 3.74-.965zm11.541-6.155c-.3-.149-1.777-.864-2.052-.962-.275-.1-.475-.149-.675.15-.2.299-.775.962-.95 1.162-.175.2-.35.224-.65.075-3.53-1.508-4.507-2.484-5.38-3.993-.225-.389-.025-.6.174-.8.18-.178.399-.449.6-.674.2-.224.266-.374.399-.623.133-.25.067-.474-.033-.674-.1-.2-4.75-1.124-5.65-1.323-.875-.199-1.513-.162-2.074.114-.425.21-.925.75-.925 1.474 0 .724.4 1.424.95 2.148.55.725 4.625 6.942 10.95 9.47 4.15 1.657 5.025 1.511 6.8 1.162.55-.108 1.778-.711 2.027-1.396.25-.685.25-1.272.174-1.396-.075-.124-.275-.2-.575-.349z" />
+        </svg>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-    <!-- ═══ SEKSI JAMINAN & GARANSI (TRUST BADGE) ═══ -->
-    <section class="section" style="padding-top: 0;">
-      <div class="con">
-        <div class="trust-grid" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
-          
-          <!-- Badge 1: Garansi Anti Error -->
-          <div class="trust-card" style="flex: 1 1 280px; max-width: 360px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 28px; border-radius: 12px; transition: all 0.3s ease; text-align: left;">
-            <div style="font-size: 32px; margin-bottom: 16px; color: var(--brand-primary, #00d2ff);">🛠️</div>
-            <h3 style="color: #fff; font-size: 18px; margin-bottom: 8px; font-weight: 600;">Garansi Bebas Error</h3>
-            <p style="font-size: 14px; color: #8e8e93; line-height: 1.6; margin: 0;">
-              Website diserahterimakan dalam kondisi 100% normal. Jika ditemukan *bug* atau error setelah *live*, kami perbaiki gratis tanpa biaya tambahan.
-            </p>
-          </div>
-
-          <!-- Badge 2: Desain Custom Original -->
-          <div class="trust-card" style="flex: 1 1 280px; max-width: 360px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 28px; border-radius: 12px; transition: all 0.3s ease; text-align: left;">
-            <div style="font-size: 32px; margin-bottom: 16px; color: #ffaa54;">🎨</div>
-            <h3 style="color: #fff; font-size: 18px; margin-bottom: 8px; font-weight: 600;">Desain Orisinal & Cepat</h3>
-            <p style="font-size: 14px; color: #8e8e93; line-height: 1.6; margin: 0;">
-              Bukan asal pakai template gratisan yang pasaran dan lemot. Struktur kode dirancang rapi, ringan, dan dioptimasi penuh agar lolos standar Google.
-            </p>
-          </div>
-
-          <!-- Badge 3: Transparansi Biaya -->
-          <div class="trust-card" style="flex: 1 1 280px; max-width: 360px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 28px; border-radius: 12px; transition: all 0.3s ease; text-align: left;">
-            <div style="font-size: 32px; margin-bottom: 16px; color: #10b981;">🔒</div>
-            <h3 style="color: #fff; font-size: 18px; margin-bottom: 8px; font-weight: 600;">Biaya Jujur di Awal</h3>
-            <p style="font-size: 14px; color: #8e8e93; line-height: 1.6; margin: 0;">
-              Tidak ada udang di balik batu. Semua nominal biaya pengembangan tertulis jelas dari awal kesepakatan tanpa ada tagihan gaib di tengah jalan.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ALUR PEMBAYARAN ═══ -->
-    <section class="section">
-      <div class="con" style="max-width: 800px;">
-        <div style="text-align: center; margin-bottom: 48px;">
-          <div class="sec-badge">Cara Kerja</div>
-          <h2 class="sec-title" style="font-size: 32px;">Sistem & <span class="hh-gradient">Skema Pembayaran</span></h2>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          <div style="background: var(--bg-surface-elevated, #12121a); padding: 24px; border-left: 4px solid var(--brand-primary); border-radius: 8px; border-top: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-            <h4 style="color:#fff; margin-bottom: 6px; font-size: 16px; font-weight: 600;">1. Konsultasi & Deal Spesifikasi (Gratis)</h4>
-            <p style="font-size:14px; color:#8e8e93; line-height: 1.5;">Kita diskusikan konsep desain, fitur, referensi, serta paket yang pas melalui WhatsApp.</p>
-          </div>
-          <div style="background: var(--bg-surface-elevated, #12121a); padding: 24px; border-left: 4px solid #ffaa54; border-radius: 8px; border-top: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-            <h4 style="color:#fff; margin-bottom: 6px; font-size: 16px; font-weight: 600;">2. Pembayaran DP (Down Payment) 50%</h4>
-            <p style="font-size:14px; color:#8e8e93; line-height: 1.5;">Proyek resmi dimulai setelah pembayaran awal 50% diterima. Kami akan membuatkan mock-up/draft pertamanya.</p>
-          </div>
-          <div style="background: var(--bg-surface-elevated, #12121a); padding: 24px; border-left: 4px solid #10b981; border-radius: 8px; border-top: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
-            <h4 style="color:#fff; margin-bottom: 6px; font-size: 16px; font-weight: 600;">3. Proses Review, Revisi & Pelunasan</h4>
-            <p style="font-size:14px; color:#8e8e93; line-height: 1.5;">Setelah website selesai dirakit, Anda mengecek kualitasnya. Jika sudah puas, lakukan pelunasan 50% sisa dan website langsung live menggunakan domain pilihan Anda.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="con">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/LOGO4721.png" alt="Faadhil Digital" width="36" height="36" loading="lazy"/>
-          <div>
-            <div class="fb-name">Faadhil<strong>Digital</strong></div>
-            <div class="fb-tag">Build Your Digital Presence</div>
-          </div>
-        </div>
-        <div class="footer-nav-wrap">
-          <div class="footer-col">
-            <h4>Halaman</h4>
-            <a href="index.html">Home</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="blog.html">Blog</a>
-          </div>
-          <div class="footer-col">
-            <h4>Info</h4>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4>Kontak</h4>
-            <a href="https://wa.me/6282317304798" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="mailto:ahmadfaadhil854@gmail.com">Email</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-btm">
-        <p>© 2026 Faadhil Digital. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/navbar.js" defer></script><script src="js/pricing.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/language.js" defer></script>
+    <script src="js/pricing.js" defer></script>
 </body>
+
 </html>

@@ -1,0 +1,132 @@
+/* PREMIUM BLUR NAVBAR */
+.navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-apple);
+}
+
+/* State saat di-scroll (diatur class via JS nanti) */
+.navbar-header.scrolled {
+    background-color: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-premium);
+    padding: 12px 0;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition-apple);
+}
+
+.navbar-header.scrolled .navbar-container {
+    padding: 10px 24px;
+}
+
+/* Logo Optimization */
+.navbar-logo-wrapper {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Membatasi tinggi maksimum container logo */
+}
+
+.navbar-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Menu Links */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu-link {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    position: relative;
+    padding: 8px 0;
+}
+
+.menu-link:hover, .menu-link.active {
+    color: var(--text-main);
+}
+
+/* Active Indicator Line Style Apple */
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-gradient);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menu-link:hover::after, .menu-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Actions Area */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--border-premium);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.lang-toggle-btn:hover {
+    color: var(--text-main);
+    border-color: var(--border-hover);
+}
+
+.mobile-cta-wrapper {
+    display: none;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-main);
+    transition: var(--transition-smooth);
+}

@@ -1,0 +1,104 @@
+/* CORE LAYOUT BLOCKS & CTA CONVERSION */
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Conversion CTA Strategy Block (Premium Glassmorphism Card) */
+.cta-conversion-section {
+    padding-bottom: 140px;
+}
+
+.cta-glass-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid var(--border-premium);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 80px 40px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.cta-card-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 122, 0, 0.06) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Conversion CTA Headline - HOTFIXED */
+.cta-headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text; /* Properti standar untuk validasi & kompatibilitas */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback aman */
+}
+
+.cta-subheadline {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    max-width: 640px;
+    margin: 0 auto 40px auto;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Features Grid (Why Us) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 16px;
+}
+
+.feature-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    margin-top: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.feature-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.feature-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Wrapper Khusus */
+.view-all-wrapper {
+    margin-top: 50px;
+}
+
+.pricing-notice {
+    color: var(--text-muted);
+}
